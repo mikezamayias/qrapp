@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:qrapp/src/pages/generate_page.dart';
+import 'package:qrapp/src/pages/scan_page.dart';
+
 enum _SelectedTab { scan, generate }
 
 class HomePage extends StatefulWidget {
@@ -11,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   _SelectedTab _selectedTab = _SelectedTab.scan;
+  List _pages = [GeneratePage(), ScanPage()];
 
   void _handleIndexChanged(int i) {
     setState(() {
@@ -22,8 +26,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: Container(
-        color: Color(0xfff3f3f3),
+      body: SafeArea(
+        child: _pages[_selectedTab.index],
       ),
       bottomNavigationBar: BottomNavigationBar(
         enableFeedback: true,
