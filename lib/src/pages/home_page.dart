@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:qrapp/src/pages/generate_page.dart';
-import 'package:qrapp/src/pages/scan_page.dart';
+import 'package:qrapp/src/pages/scan_page_blueprint.dart';
 
 enum _SelectedTab { scan, generate }
 

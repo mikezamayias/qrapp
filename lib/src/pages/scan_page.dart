@@ -46,74 +46,80 @@ class _ScanPageState extends State<ScanPage> {
                   )
                 else
                   Text('Scan a code'),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   crossAxisAlignment: CrossAxisAlignment.center,
+                //   children: <Widget>[
+                //     Container(
+                //       margin: EdgeInsets.all(8),
+                //       child: ElevatedButton(
+                //         onPressed: () async {
+                //           await controller?.toggleFlash();
+                //           setState(() {});
+                //         },
+                //         child: FutureBuilder(
+                //           future: controller?.getFlashStatus(),
+                //           builder: (context, snapshot) {
+                //             return Text('Flash: ${snapshot.data}');
+                //           },
+                //         ),
+                //       ),
+                //     ),
+                //     Container(
+                //       margin: EdgeInsets.all(8),
+                //       child: ElevatedButton(
+                //         onPressed: () async {
+                //           await controller?.flipCamera();
+                //           setState(() {});
+                //         },
+                //         child: FutureBuilder(
+                //           future: controller?.getCameraInfo(),
+                //           builder: (context, snapshot) {
+                //             if (snapshot.data != null) {
+                //               return Text(
+                //                   'Camera facing ${describeEnum(snapshot.data!)}');
+                //             } else {
+                //               return Text('loading');
+                //             }
+                //           },
+                //         ),
+                //       ),
+                //     )
+                //   ],
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    // Container(
+                    //   margin: EdgeInsets.all(8),
+                    //   child: ElevatedButton(
+                    //     onPressed: () async {
+                    //       await controller?.pauseCamera();
+                    //     },
+                    //     child: Text(
+                    //       'pause',
+                    //       style: TextStyle(fontSize: 20),
+                    //     ),
+                    //   ),
+                    // ),
                     Container(
                       margin: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          await controller?.toggleFlash();
-                          setState(() {});
-                        },
-                        child: FutureBuilder(
-                          future: controller?.getFlashStatus(),
-                          builder: (context, snapshot) {
-                            return Text('Flash: ${snapshot.data}');
-                          },
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          await controller?.flipCamera();
-                          setState(() {});
-                        },
-                        child: FutureBuilder(
-                          future: controller?.getCameraInfo(),
-                          builder: (context, snapshot) {
-                            if (snapshot.data != null) {
-                              return Text(
-                                  'Camera facing ${describeEnum(snapshot.data!)}');
-                            } else {
-                              return Text('loading');
-                            }
-                          },
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          await controller?.pauseCamera();
-                        },
-                        child: Text(
-                          'pause',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      child: ElevatedButton(
+                      child: IconButton(
                         onPressed: () async {
                           await controller?.resumeCamera();
                         },
-                        child: Text(
-                          'resume',
-                          style: TextStyle(fontSize: 20),
-                        ),
+                        icon: Icon(Icons.refresh_rounded),
                       ),
+                      // child: ElevatedButton(
+                      //   onPressed: () async {
+                      //     await controller?.resumeCamera();
+                      //   },
+                      //   child: Text(
+                      //     'resume',
+                      //     style: TextStyle(fontSize: 20),
+                      //   ),
+                      // ),
                     )
                   ],
                 ),
@@ -128,21 +134,23 @@ class _ScanPageState extends State<ScanPage> {
   Widget _buildQrView(BuildContext context) {
     // For this example we check how width or tall the device is and change the
     // scanArea and overlay accordingly.
-    var scanArea = (MediaQuery.of(context).size.width < 400 ||
-            MediaQuery.of(context).size.height < 400)
-        ? 150.0
-        : 300.0;
+    // var scanArea = (MediaQuery.of(context).size.width < 400 ||
+    //         MediaQuery.of(context).size.height < 400)
+    //     ? 150.0
+    //     : 300.0;
+    // double scanArea = 300;
     // To ensure the Scanner view is properly sizes after rotation we need to
     // set the is ten for Flutter SizeChanged notification and update controller
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
-      overlay: QrScannerOverlayShape(
-          borderColor: Colors.red,
-          borderRadius: 10,
-          borderLength: 30,
-          borderWidth: 10,
-          cutOutSize: scanArea),
+      // overlay: QrScannerOverlayShape(
+      //   borderColor: Colors.red,
+      //   borderRadius: 10,
+      //   borderLength: 30,
+      //   borderWidth: 10,
+      //   cutOutSize: scanArea,
+      // ),
       onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
     );
   }
@@ -151,10 +159,11 @@ class _ScanPageState extends State<ScanPage> {
     setState(() {
       this.controller = controller;
     });
-    controller.scannedDataStream.listen((scanData) {
+    controller.scannedDataStream.listen((scanData) async {
       setState(() {
         result = scanData;
       });
+      await controller.pauseCamera();
     });
   }
 
