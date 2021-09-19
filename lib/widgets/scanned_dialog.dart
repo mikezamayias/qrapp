@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:qrapp/widgets/code_text.dart';
 
 import 'package:qrapp/widgets/floaty_button.dart';
 import 'package:qrapp/widgets/floaty_button_bar.dart';
