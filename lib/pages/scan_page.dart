@@ -5,8 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qrapp/widgets/floaty_button.dart';
-import 'package:qrapp/widgets/floaty_button_bar.dart';
+import 'package:qrapp/widgets/scanned_dialog.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
@@ -29,40 +28,9 @@ class _ScanPageState extends State<ScanPage> {
     controller!.resumeCamera();
   }
 
-  Widget _iconButton(
-          String tooltip, IconData iconData, VoidCallback onPressed) =>
-      Container(
-        margin: EdgeInsets.all(3),
-        child: IconButton(
-          splashRadius: 1,
-          onPressed: onPressed,
-          icon: Icon(iconData),
-          tooltip: tooltip,
-        ),
-      );
-
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
-      children: <Widget>[
-        _buildQrView(context),
-        FloatyButtonBar(
-          children: [
-            FloatyButton(
-              tooltip: 'Pause camera',
-              iconData: Icons.pause_rounded,
-              onPressed: () async => await controller?.pauseCamera(),
-            ),
-            FloatyButton(
-              tooltip: 'Resume camera',
-              iconData: Icons.refresh_rounded,
-              onPressed: () async => await controller?.resumeCamera(),
-            ),
-          ],
-        ),
-      ],
-    );
+    return _buildQrView(context);
   }
 
   Widget _buildQrView(BuildContext context) {
@@ -80,9 +48,32 @@ class _ScanPageState extends State<ScanPage> {
     controller.scannedDataStream.listen((scanData) async {
       setState(() {
         result = scanData;
+        print(result!.code);
       });
       HapticFeedback.lightImpact();
       await controller.pauseCamera();
+      showDialog(
+        context: context,
+        builder: (_) => WillPopScope(
+          onWillPop: () => Future.value(true).then((exit) async {
+            Navigator.of(context).pop();
+            await controller.resumeCamera();
+            return true;
+          }),
+          child: ScannedDialog(
+            code: result!.code,
+            goBackAction: () async {
+              Navigator.of(context).pop();
+              await controller.resumeCamera();
+            },
+            shareAction: () {
+              print('Need to share!');
+            },
+          ),
+        ),
+        barrierDismissible: false,
+        barrierColor: Color(0xaa303030),
+      );
     });
   }
 
