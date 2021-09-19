@@ -6,15 +6,21 @@ class GeneratePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          'Under development!',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Color(0xff303030),
-            fontSize: 24,
-          ),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(21),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Under development!',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xff303030),
+                fontSize: 24,
+              ),
+            ),
+          ],
         ),
       ),
     );
