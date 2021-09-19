@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qrapp/widgets/floaty_button.dart';
+import 'package:qrapp/widgets/floaty_button_bar.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
@@ -39,44 +41,26 @@ class _ScanPageState extends State<ScanPage> {
         ),
       );
 
-  Widget _pauseCameraButton() => _iconButton(
-        'Pause camera',
-        Icons.pause_rounded,
-        () async => await controller?.pauseCamera(),
-      );
-
-  Widget _resumeCameraButton() => _iconButton(
-        'Resume camera',
-        Icons.refresh_rounded,
-        () async => await controller?.resumeCamera(),
-      );
-
-  Widget _floatyButtonBar(List<Widget> children) => Padding(
-        padding: const EdgeInsets.all(21.0),
-        child: Card(
-          color: Color(0xfff3f3f3),
-          shadowColor: Color(0xff303030),
-          elevation: 9,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(21),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: children,
-          ),
-        ),
-      );
-
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         _buildQrView(context),
-        _floatyButtonBar([
-          _pauseCameraButton(),
-          _resumeCameraButton(),
-        ])
+        FloatyButtonBar(
+          children: [
+            FloatyButton(
+              tooltip: 'Pause camera',
+              iconData: Icons.pause_rounded,
+              onPressed: () async => await controller?.pauseCamera(),
+            ),
+            FloatyButton(
+              tooltip: 'Resume camera',
+              iconData: Icons.refresh_rounded,
+              onPressed: () async => await controller?.resumeCamera(),
+            ),
+          ],
+        ),
       ],
     );
   }
