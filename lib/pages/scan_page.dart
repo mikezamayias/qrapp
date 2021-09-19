@@ -27,57 +27,56 @@ class _ScanPageState extends State<ScanPage> {
     controller!.resumeCamera();
   }
 
+  Widget _iconButton(
+          String tooltip, IconData iconData, VoidCallback onPressed) =>
+      Container(
+        margin: EdgeInsets.all(3),
+        child: IconButton(
+          splashRadius: 1,
+          onPressed: onPressed,
+          icon: Icon(iconData),
+          tooltip: tooltip,
+        ),
+      );
+
+  Widget _pauseCameraButton() => _iconButton(
+        'Pause camera',
+        Icons.pause_rounded,
+        () async => await controller?.pauseCamera(),
+      );
+
+  Widget _resumeCameraButton() => _iconButton(
+        'Resume camera',
+        Icons.refresh_rounded,
+        () async => await controller?.resumeCamera(),
+      );
+
+  Widget _floatyButtonBar(List<Widget> children) => Padding(
+        padding: const EdgeInsets.all(21.0),
+        child: Card(
+          color: Color(0xfff3f3f3),
+          shadowColor: Color(0xff303030),
+          elevation: 9,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(21),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: children,
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      alignment: Alignment.bottomCenter,
       children: <Widget>[
-        Expanded(
-          flex: 4,
-          child: _buildQrView(context),
-        ),
-        Expanded(
-          flex: 1,
-          child: FittedBox(
-            fit: BoxFit.contain,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                if (result != null)
-                  Text(
-                    'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
-                  )
-                else
-                  Text('Scanning'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      child: IconButton(
-                        onPressed: () async {
-                          await controller?.pauseCamera();
-                        },
-                        icon: Icon(Icons.pause_rounded),
-                        tooltip: 'Pause camera',
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      child: IconButton(
-                        onPressed: () async {
-                          await controller?.resumeCamera();
-                        },
-                        icon: Icon(Icons.refresh_rounded),
-                        tooltip: 'Resume camera',
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-        )
+        _buildQrView(context),
+        _floatyButtonBar([
+          _pauseCameraButton(),
+          _resumeCameraButton(),
+        ])
       ],
     );
   }
