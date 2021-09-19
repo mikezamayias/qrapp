@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ScanPage extends StatefulWidget {
@@ -17,8 +18,6 @@ class _ScanPageState extends State<ScanPage> {
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
 
-  // In order to get hot reload to work we need to pause the camera if the
-  // platform is android, or resume the camera if the platform is iOS.
   @override
   void reassemble() {
     super.reassemble();
@@ -32,7 +31,10 @@ class _ScanPageState extends State<ScanPage> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Expanded(flex: 4, child: _buildQrView(context)),
+        Expanded(
+          flex: 4,
+          child: _buildQrView(context),
+        ),
         Expanded(
           flex: 1,
           child: FittedBox(
@@ -45,48 +47,7 @@ class _ScanPageState extends State<ScanPage> {
                     'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
                   )
                 else
-                  Text('Scan a code'),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   crossAxisAlignment: CrossAxisAlignment.center,
-                //   children: <Widget>[
-                //     Container(
-                //       margin: EdgeInsets.all(8),
-                //       child: ElevatedButton(
-                //         onPressed: () async {
-                //           await controller?.toggleFlash();
-                //           setState(() {});
-                //         },
-                //         child: FutureBuilder(
-                //           future: controller?.getFlashStatus(),
-                //           builder: (context, snapshot) {
-                //             return Text('Flash: ${snapshot.data}');
-                //           },
-                //         ),
-                //       ),
-                //     ),
-                //     Container(
-                //       margin: EdgeInsets.all(8),
-                //       child: ElevatedButton(
-                //         onPressed: () async {
-                //           await controller?.flipCamera();
-                //           setState(() {});
-                //         },
-                //         child: FutureBuilder(
-                //           future: controller?.getCameraInfo(),
-                //           builder: (context, snapshot) {
-                //             if (snapshot.data != null) {
-                //               return Text(
-                //                   'Camera facing ${describeEnum(snapshot.data!)}');
-                //             } else {
-                //               return Text('loading');
-                //             }
-                //           },
-                //         ),
-                //       ),
-                //     )
-                //   ],
-                // ),
+                  Text('Scanning'),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -137,7 +98,8 @@ class _ScanPageState extends State<ScanPage> {
       setState(() {
         result = scanData;
       });
-      // await controller.pauseCamera();
+      HapticFeedback.lightImpact();
+      await controller.pauseCamera();
     });
   }
 
