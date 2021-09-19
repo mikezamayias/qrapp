@@ -6,7 +6,7 @@ import 'package:qrapp/widgets/code_text.dart';
 
 import 'package:qrapp/widgets/floaty_button.dart';
 import 'package:qrapp/widgets/floaty_button_bar.dart';
-import 'package:qrapp/widgets/format_text.dart';
+import 'package:qrapp/widgets/result_text.dart';
 
 class ScannedDialog extends StatefulWidget {
   final String format;
@@ -61,7 +61,7 @@ class _ScannedDialogState extends State<ScannedDialog> {
               ),
             ),
           ),
-          FormatText(format: widget.format),
+          ResultText(result: widget.format),
           Padding(
             padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
             child: Text(
@@ -72,7 +72,7 @@ class _ScannedDialogState extends State<ScannedDialog> {
               ),
             ),
           ),
-          CodeText(code: widget.code),
+          ResultText(result: widget.code),
           FloatyButtonBar(
             children: [
               FloatyButton(
