@@ -2,17 +2,21 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:qrapp/widgets/code_text.dart';
 
 import 'package:qrapp/widgets/floaty_button.dart';
 import 'package:qrapp/widgets/floaty_button_bar.dart';
+import 'package:qrapp/widgets/format_text.dart';
 
 class ScannedDialog extends StatefulWidget {
+  final String format;
   final String code;
   final VoidCallback goBackAction;
   final VoidCallback shareAction;
 
   ScannedDialog({
     Key? key,
+    required this.format,
     required this.code,
     required this.goBackAction,
     required this.shareAction,
@@ -38,7 +42,7 @@ class _ScannedDialogState extends State<ScannedDialog> {
           Padding(
             padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
             child: Text(
-              'Scanned QR Code',
+              'Scanned Data',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Color(0xff303030),
@@ -50,13 +54,25 @@ class _ScannedDialogState extends State<ScannedDialog> {
           Padding(
             padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
             child: Text(
-              widget.code,
+              'Format:',
               style: TextStyle(
                 color: Color(0xff303030),
-                fontSize: 21,
+                fontSize: 15,
               ),
             ),
           ),
+          FormatText(format: widget.format),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
+            child: Text(
+              'Data:',
+              style: TextStyle(
+                color: Color(0xff303030),
+                fontSize: 15,
+              ),
+            ),
+          ),
+          CodeText(code: widget.code),
           FloatyButtonBar(
             children: [
               FloatyButton(

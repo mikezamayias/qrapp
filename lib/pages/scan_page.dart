@@ -61,6 +61,7 @@ class _ScanPageState extends State<ScanPage> {
             return true;
           }),
           child: ScannedDialog(
+            format: describeEnum(result!.format),
             code: result!.code,
             goBackAction: () async {
               Navigator.of(context).pop();
@@ -68,7 +69,7 @@ class _ScanPageState extends State<ScanPage> {
             },
             shareAction: () {
               print('Need to share!');
-            },
+            }, 
           ),
         ),
         barrierDismissible: false,
