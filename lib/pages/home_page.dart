@@ -22,10 +22,29 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  BottomNavigationBarItem _bottomNavButton(
+          String tooltip, IconData icon, String label) =>
+      BottomNavigationBarItem(
+        tooltip: tooltip,
+        icon: Icon(icon),
+        label: label,
+      );
+
+  BottomNavigationBarItem _generateNavButton() => _bottomNavButton(
+        'Generate QR code',
+        Icons.qr_code_rounded,
+        'Generate',
+      );
+
+  BottomNavigationBarItem _scanNavButton() => _bottomNavButton(
+        'Scan QR code',
+        Icons.qr_code_scanner_rounded,
+        'Scan',
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: ,),
       extendBody: true,
       body: SafeArea(
         child: _pages[_selectedTab.index],
@@ -39,17 +58,9 @@ class _HomePageState extends State<HomePage> {
           _handleIndexChanged(i);
           print(_selectedTab.toString());
         },
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            tooltip: 'Generate QR code',
-            icon: const Icon(Icons.qr_code_rounded),
-            label: 'Generate',
-          ),
-          BottomNavigationBarItem(
-            tooltip: 'Scan QR code',
-            icon: const Icon(Icons.qr_code_scanner_rounded),
-            label: 'Scan',
-          ),
+        items: <BottomNavigationBarItem>[
+          _generateNavButton(),
+          _scanNavButton(),
         ],
       ),
     );
