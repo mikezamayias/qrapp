@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/bottom_nav_bar_buttons.dart'
+    show generateNavButton, scanNavButton;
 import 'generate_page.dart';
 import 'scan_page.dart';
-
 
 enum _SelectedTab { scan, generate }
 
@@ -23,26 +24,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  BottomNavigationBarItem _bottomNavButton(
-          String tooltip, IconData icon, String label) =>
-      BottomNavigationBarItem(
-        tooltip: tooltip,
-        icon: Icon(icon),
-        label: label,
-      );
-
-  BottomNavigationBarItem _generateNavButton() => _bottomNavButton(
-        'Generate QR code',
-        Icons.qr_code_rounded,
-        'Generate',
-      );
-
-  BottomNavigationBarItem _scanNavButton() => _bottomNavButton(
-        'Scan QR code',
-        Icons.qr_code_scanner_rounded,
-        'Scan',
-      );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,8 +41,8 @@ class _HomePageState extends State<HomePage> {
           print(_selectedTab.toString());
         },
         items: <BottomNavigationBarItem>[
-          _generateNavButton(),
-          _scanNavButton(),
+          generateNavButton(),
+          scanNavButton(),
         ],
       ),
     );
