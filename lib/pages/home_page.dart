@@ -45,6 +45,14 @@ class _HomePageState extends State<HomePage> {
           scanNavButton(),
         ],
       ),
+      bottomSheet: BottomSheet(
+        onClosing: () => print('Dont close me!'),
+        builder: (_) => Container(
+          child: Text(
+            'Bottom Sheet Time!',
+          ),
+        ),
+      ),
     );
   }
 }
