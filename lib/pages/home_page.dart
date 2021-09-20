@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
 import '../widgets/bottom_nav_bar_buttons.dart'
     show generateNavButton, scanNavButton;
@@ -31,19 +32,47 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: _pages[_selectedTab.index],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        enableFeedback: true,
-        selectedItemColor: const Color(0xff303030),
-        unselectedItemColor: const Color(0x40303030),
-        currentIndex: _selectedTab.index,
-        onTap: (i) {
-          _handleIndexChanged(i);
-          print(_selectedTab.toString());
+      bottomNavigationBar: SimpleGestureDetector(
+        onVerticalSwipe: (direction) {
+          if (direction == SwipeDirection.up) {
+            showModalBottomSheet(
+              context: context,
+              builder: (_) => BottomSheet(
+                onClosing: () {},
+                builder: (_) => Container(),
+                enableDrag: false,
+                elevation: 9,
+                backgroundColor: const Color(0xfff3f3f3),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: const Radius.circular(21),
+                    topRight: const Radius.circular(21),
+                  ),
+                ),
+              ),
+            );
+          } else {
+            // Action to do when user swipes down from bottom navigation bar.
+          }
         },
-        items: <BottomNavigationBarItem>[
-          generateNavButton(),
-          scanNavButton(),
-        ],
+        swipeConfig: const SimpleSwipeConfig(
+          verticalThreshold: 60,
+          horizontalThreshold: 60,
+        ),
+        child: BottomNavigationBar(
+          enableFeedback: true,
+          selectedItemColor: const Color(0xff303030),
+          unselectedItemColor: const Color(0x40303030),
+          currentIndex: _selectedTab.index,
+          onTap: (i) {
+            _handleIndexChanged(i);
+            print(_selectedTab.toString());
+          },
+          items: <BottomNavigationBarItem>[
+            generateNavButton(),
+            scanNavButton(),
+          ],
+        ),
       ),
     );
   }
