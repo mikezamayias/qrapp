@@ -33,8 +33,8 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         enableFeedback: true,
-        selectedItemColor: Color(0xff303030),
-        unselectedItemColor: Color(0x40303030),
+        selectedItemColor: const Color(0xff303030),
+        unselectedItemColor: const Color(0x40303030),
         currentIndex: _selectedTab.index,
         onTap: (i) {
           _handleIndexChanged(i);
@@ -44,14 +44,6 @@ class _HomePageState extends State<HomePage> {
           generateNavButton(),
           scanNavButton(),
         ],
-      ),
-      bottomSheet: BottomSheet(
-        onClosing: () => print('Dont close me!'),
-        builder: (_) => Container(
-          child: Text(
-            'Bottom Sheet Time!',
-          ),
-        ),
       ),
     );
   }
