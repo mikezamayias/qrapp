@@ -2,7 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:page_transition/page_transition.dart';
+
+import 'package:qrapp/src/action_pages/generated_code_page.dart';
 
 class GeneratePage extends StatefulWidget {
   const GeneratePage({Key? key}) : super(key: key);
@@ -15,6 +17,19 @@ class _GeneratePageState extends State<GeneratePage> {
   String data = '';
 
   void _updateData(value) => setState(() => data = value);
+
+  void _showQRCode(value) => Navigator.push(
+        context,
+        PageTransition(
+          type: PageTransitionType.fade,
+          curve: Curves.easeInToLinear,
+          duration: const Duration(milliseconds: 210),
+          reverseDuration: const Duration(milliseconds: 210),
+          child: GeneratedCodePage(
+            data: value,
+          ),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +51,7 @@ class _GeneratePageState extends State<GeneratePage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
             child: TextFormField(
-              keyboardType: TextInputType.text,
+              onFieldSubmitted: _showQRCode,
               onChanged: _updateData,
               cursorColor: const Color(0xff303030),
               decoration: const InputDecoration(
@@ -57,21 +72,6 @@ class _GeneratePageState extends State<GeneratePage> {
               ),
             ),
           ),
-          data != ''
-              ? Padding(
-                  padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
-                  child: QrImage(
-                    data: data,
-                    version: QrVersions.auto,
-                    size: MediaQuery.of(context).size.width * 0.72,
-                    foregroundColor: const Color(0xff303030),
-                    eyeStyle: QrEyeStyle(
-                      eyeShape: QrEyeShape.square,
-                      color: const Color(0xff303030),
-                    ),
-                  ),
-                )
-              : Container(),
         ],
       ),
     );
