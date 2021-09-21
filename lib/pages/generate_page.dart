@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'package:qrapp/src/action_pages/generated_code_page.dart';
+import '../src/action_pages/generated_code_page.dart';
 
 class GeneratePage extends StatefulWidget {
   const GeneratePage({Key? key}) : super(key: key);
