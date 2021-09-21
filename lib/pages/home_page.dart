@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
-import '../widgets/bottom_nav_bar_buttons.dart'
+import '../src/widgets/bottom_nav_bar_buttons.dart'
     show generateNavButton, scanNavButton;
 import 'generate_page.dart';
 import 'scan_page.dart';

@@ -5,7 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qrapp/widgets/scanned_dialog.dart';
+
+import '../src/widgets/scanned_dialog.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
@@ -71,7 +72,7 @@ class _ScanPageState extends State<ScanPage> {
             },
             shareAction: () {
               print('Need to share!');
-            }, 
+            },
           ),
         ),
       );

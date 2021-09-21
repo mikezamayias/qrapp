@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'package:qrapp/widgets/floaty_button.dart';
-import 'package:qrapp/widgets/floaty_button_bar.dart';
-import 'package:qrapp/widgets/result_text.dart';
+import 'floaty_button.dart';
+import 'floaty_button_bar.dart';
+import 'result_text.dart';
 
 class ScannedDialog extends StatefulWidget {
   final String format;
