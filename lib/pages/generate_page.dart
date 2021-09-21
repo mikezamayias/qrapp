@@ -17,6 +17,7 @@ class _GeneratePageState extends State<GeneratePage> {
   void _updateData(value) => setState(() => data = value);
 
   void _showQRCode(value) {
+    _updateData(value);
     showModalBottomSheet(
       isDismissible: true,
       barrierColor: const Color(0xcc0303030),
