@@ -4,17 +4,17 @@ class PageBlueprint extends StatelessWidget {
   const PageBlueprint({
     Key? key,
     required this.title,
-    required this.showLeadingIconButton,
-    required this.leadingIconButton,
-    required this.trailingActions,
-    required this.bodyWidget,
+    this.showLeadingIconButton = false,
+    this.leadingIconButton,
+    this.trailingActions,
+    this.bodyWidget,
   }) : super(key: key);
 
   final String title;
   final bool showLeadingIconButton;
-  final IconButton leadingIconButton;
-  final List<IconButton> trailingActions;
-  final Widget bodyWidget;
+  final IconButton? leadingIconButton;
+  final List<IconButton>? trailingActions;
+  final Widget? bodyWidget;
 
   @override
   Widget build(BuildContext context) {
