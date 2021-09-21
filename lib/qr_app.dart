@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'pages/home_page.dart';
+import 'src/pages/home_page.dart';
+
 
 class QrApp extends StatelessWidget {
   @override
