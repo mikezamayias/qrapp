@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qrapp/src/widgets/page_blueprint.dart';
 
 import '../widgets/scanned_dialog.dart';
 
@@ -31,7 +32,10 @@ class _ScanPageState extends State<ScanPage> {
 
   @override
   Widget build(BuildContext context) {
-    return _buildQrView(context);
+    return PageBlueprint(
+      title: 'Scan QR Code',
+      bodyWidget: _buildQrView(context),
+    );
   }
 
   Widget _buildQrView(BuildContext context) {
