@@ -12,7 +12,7 @@ class GeneratePage extends StatefulWidget {
 }
 
 class _GeneratePageState extends State<GeneratePage> {
-  var data = 'QRapp!';
+  String data = '';
 
   void _updateData(value) => setState(() => data = value);
 
@@ -56,19 +56,21 @@ class _GeneratePageState extends State<GeneratePage> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
-            child: QrImage(
-              data: data,
-              version: QrVersions.auto,
-              size: MediaQuery.of(context).size.width*0.72,
-              foregroundColor: const Color(0xff303030),
-              eyeStyle: QrEyeStyle(
-                eyeShape: QrEyeShape.square,
-                color: const Color(0xff303030),
-              ),
-            ),
-          ),
+          data != ''
+              ? Padding(
+                  padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
+                  child: QrImage(
+                    data: data,
+                    version: QrVersions.auto,
+                    size: MediaQuery.of(context).size.width * 0.72,
+                    foregroundColor: const Color(0xff303030),
+                    eyeStyle: QrEyeStyle(
+                      eyeShape: QrEyeShape.square,
+                      color: const Color(0xff303030),
+                    ),
+                  ),
+                )
+              : Container(),
         ],
       ),
     );

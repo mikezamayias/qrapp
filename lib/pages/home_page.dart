@@ -36,6 +36,12 @@ class _HomePageState extends State<HomePage> {
         onVerticalSwipe: (direction) {
           if (direction == SwipeDirection.up) {
             showModalBottomSheet(
+              isDismissible: false,
+              barrierColor: const Color(0xcc0303030),
+              // isScrollControlled: true,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(21)),
+              ),
               context: context,
               builder: (_) => BottomSheet(
                 onClosing: () {},
@@ -51,8 +57,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             );
-          } else {
-            // Action to do when user swipes down from bottom navigation bar.
           }
         },
         swipeConfig: const SimpleSwipeConfig(
