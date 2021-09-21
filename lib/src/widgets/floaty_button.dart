@@ -15,7 +15,7 @@ class FloatyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(3),
+      margin: EdgeInsets.all(6),
       child: IconButton(
         splashRadius: 1,
         onPressed: onPressed,

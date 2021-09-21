@@ -23,6 +23,7 @@ class FloatyButtonBar extends StatelessWidget {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: children,
         ),
       ),
