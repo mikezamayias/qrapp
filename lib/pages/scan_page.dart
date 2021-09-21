@@ -53,6 +53,8 @@ class _ScanPageState extends State<ScanPage> {
       HapticFeedback.lightImpact();
       await controller.pauseCamera();
       showDialog(
+        barrierDismissible: false,
+        barrierColor: Color(0xaa303030),
         context: context,
         builder: (_) => WillPopScope(
           onWillPop: () => Future.value(true).then((exit) async {
@@ -72,8 +74,6 @@ class _ScanPageState extends State<ScanPage> {
             }, 
           ),
         ),
-        barrierDismissible: false,
-        barrierColor: Color(0xaa303030),
       );
     });
   }
