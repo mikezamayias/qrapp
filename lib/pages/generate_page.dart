@@ -36,6 +36,7 @@ class _GeneratePageState extends State<GeneratePage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
             child: TextFormField(
+              keyboardType: TextInputType.text,
               onChanged: _updateData,
               cursorColor: const Color(0xff303030),
               decoration: const InputDecoration(
