@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
-import 'action_pages/generated_code_page.dart';
+import 'action_pages/generated_qrcode_page.dart';
 
 class GeneratePage extends StatefulWidget {
   const GeneratePage({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _GeneratePageState extends State<GeneratePage> {
           curve: Curves.easeInToLinear,
           duration: const Duration(milliseconds: 210),
           reverseDuration: const Duration(milliseconds: 210),
-          child: GeneratedCodePage(
+          child: GeneratedQRCodePage(
             data: value,
           ),
         ),

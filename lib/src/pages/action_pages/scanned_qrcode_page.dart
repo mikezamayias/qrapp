@@ -5,25 +5,21 @@ import '../../widgets/code_type.dart';
 import '../../widgets/page_blueprint.dart';
 import '../../widgets/code_data_string.dart';
 
-class ScannedDialog extends StatefulWidget {
+class ScannedQRCodePage extends StatefulWidget {
   final String format;
   final String code;
-  final VoidCallback goBackAction;
-  final VoidCallback shareAction;
 
-  ScannedDialog({
+  ScannedQRCodePage({
     Key? key,
     required this.format,
     required this.code,
-    required this.goBackAction,
-    required this.shareAction,
   }) : super(key: key);
 
   @override
-  _ScannedDialogState createState() => _ScannedDialogState();
+  _ScannedCodePageState createState() => _ScannedCodePageState();
 }
 
-class _ScannedDialogState extends State<ScannedDialog> {
+class _ScannedCodePageState extends State<ScannedQRCodePage> {
   @override
   Widget build(BuildContext context) {
     return PageBlueprint(

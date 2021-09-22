@@ -7,8 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
-import 'action_pages/scanned_code_page.dart';
-
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
 
@@ -57,29 +55,6 @@ class _ScanPageState extends State<ScanPage> {
       });
       HapticFeedback.lightImpact();
       await controller.pauseCamera();
-      showDialog(
-        barrierDismissible: false,
-        barrierColor: Color(0xaa303030),
-        context: context,
-        builder: (_) => WillPopScope(
-          onWillPop: () => Future.value(true).then((exit) async {
-            Navigator.of(context).pop();
-            await controller.resumeCamera();
-            return true;
-          }),
-          child: ScannedDialog(
-            format: describeEnum(result!.format),
-            code: result!.code,
-            goBackAction: () async {
-              Navigator.of(context).pop();
-              await controller.resumeCamera();
-            },
-            shareAction: () {
-              print('Need to share!');
-            },
-          ),
-        ),
-      );
     });
   }
 
