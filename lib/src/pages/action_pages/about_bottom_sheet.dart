@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:qrapp/src/pages/about_pages/author_page.dart';
-import 'package:qrapp/src/pages/about_pages/open_source_libraries_page.dart';
-import 'package:qrapp/src/widgets/about_bottom_sheet_list_tile.dart';
+
+import '../about_pages/about_author_page.dart';
+import '../about_pages/about_license_page.dart';
+import '../about_pages/about_open_source_libraries_page.dart';
+import '../../widgets/about_bottom_sheet_list_tile.dart';
 
 class AboutBottomSheet extends StatelessWidget {
   const AboutBottomSheet({Key? key}) : super(key: key);
@@ -33,17 +34,17 @@ class AboutBottomSheet extends StatelessWidget {
             AboutBottomSheetListTile(
               title: 'Author',
               iconData: Icons.code_rounded,
-              page: AuthorPage(),
+              page: AboutAuthorPage(),
             ),
             AboutBottomSheetListTile(
               title: 'Licenses',
               iconData: Icons.article_rounded,
-              page: LicensePage(),
+              page: AboutLicensePage(),
             ),
             AboutBottomSheetListTile(
               title: 'Open Source Libraries',
               iconData: Icons.source_rounded,
-              page: OpenSourceLibrariesPage(),
+              page: AboutOpenSourceLibrariesPage(),
             ),
           ],
         ),
