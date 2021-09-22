@@ -5,8 +5,6 @@ import 'package:qrapp/src/widgets/code_data_qrcode.dart';
 import 'package:qrapp/src/widgets/code_type.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
-import '../../widgets/floaty_button.dart';
-import '../../widgets/floaty_button_bar.dart';
 import '../../widgets/code_data_string.dart';
 
 class ScannedDialog extends StatefulWidget {
