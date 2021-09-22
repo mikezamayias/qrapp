@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:qrapp/src/widgets/code_data_qrcode.dart';
-import 'package:qrapp/src/widgets/code_type.dart';
-import 'package:qrapp/src/widgets/page_blueprint.dart';
 
+import '../../widgets/code_data_qrcode.dart';
+import '../../widgets/code_type.dart';
+import '../../widgets/page_blueprint.dart';
 import '../../widgets/code_data_string.dart';
 
 class ScannedDialog extends StatefulWidget {
