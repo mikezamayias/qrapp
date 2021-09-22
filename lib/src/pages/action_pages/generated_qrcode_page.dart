@@ -36,18 +36,16 @@ class GeneratedQRCodePage extends StatelessWidget {
       bodyWidget: Center(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
-          child: data != null
-              ? QrImage(
-                  data: data,
-                  version: QrVersions.auto,
-                  size: MediaQuery.of(context).size.width * 0.72,
-                  foregroundColor: const Color(0xff303030),
-                  eyeStyle: QrEyeStyle(
-                    eyeShape: QrEyeShape.square,
-                    color: const Color(0xff303030),
-                  ),
-                )
-              : Container(),
+          child: QrImage(
+            data: data,
+            version: QrVersions.auto,
+            size: MediaQuery.of(context).size.width * 0.72,
+            foregroundColor: const Color(0xff303030),
+            eyeStyle: QrEyeStyle(
+              eyeShape: QrEyeShape.square,
+              color: const Color(0xff303030),
+            ),
+          ),
         ),
       ),
     );
