@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ResultText extends StatelessWidget {
-  final String result;
+class CodeDataString extends StatelessWidget {
+  final String data;
 
-  const ResultText({
+  const CodeDataString({
     Key? key,
-    required this.result,
+    required this.data,
   }) : super(key: key);
 
   @override
@@ -13,7 +13,7 @@ class ResultText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(21, 3, 21, 0),
       child: SelectableText(
-        result,
+        data,
         style: const TextStyle(
           color: const Color(0xff303030),
           fontSize: 18,

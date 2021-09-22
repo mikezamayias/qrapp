@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
-import '../widgets/scanned_dialog.dart';
+import 'action_pages/scanned_code_page.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
