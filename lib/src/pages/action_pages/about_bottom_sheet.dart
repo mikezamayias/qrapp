@@ -20,49 +20,70 @@ class AboutBottomSheet extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
-              title: Center(
-                child: Text(
-                  'About',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                    color: const Color(0xff303030),
-                  ),
+              leading: const Icon(
+                Icons.info_rounded,
+                color: const Color(0xff303030),
+                size: 24,
+              ),
+              title: Text(
+                'About',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: const Color(0xff303030),
                 ),
               ),
             ),
             ListTile(
+              leading: const Icon(
+                Icons.account_circle_rounded,
+                color: const Color(0xff303030),
+                size: 18,
+              ),
               title: Text(
                 'Author',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.normal,
                   fontSize: 18,
                   color: const Color(0xff303030),
                 ),
               ),
+              onTap: () => print('Author'),
             ),
             ListTile(
+              leading: const Icon(
+                Icons.article_rounded,
+                color: const Color(0xff303030),
+                size: 18,
+              ),
+              title: Text(
+                'License',
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 18,
+                  color: const Color(0xff303030),
+                ),
+              ),
+              onTap: () => print('License'),
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.source_rounded,
+                color: const Color(0xff303030),
+                size: 18,
+              ),
               title: Text(
                 'Open Source Libraries',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.normal,
                   fontSize: 18,
                   color: const Color(0xff303030),
                 ),
               ),
-            ),
-            ListTile(
-              title: Text(
-                'Licence',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: const Color(0xff303030),
-                ),
-              ),
+              onTap: () => print('Open Source Libraries'),
             ),
           ],
         ),
