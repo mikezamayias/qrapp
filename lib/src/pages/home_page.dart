@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrapp/src/pages/action_pages/about_bottom_sheet.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
 import '../widgets/bottom_nav_bar_buttons.dart';
@@ -19,9 +20,7 @@ class _HomePageState extends State<HomePage> {
   List _pages = [GeneratePage(), ScanPage()];
 
   void _handleIndexChanged(int i) {
-    setState(() {
-      _selectedTab = _SelectedTab.values[i];
-    });
+    setState(() => _selectedTab = _SelectedTab.values[i]);
   }
 
   @override
@@ -42,19 +41,7 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.all(Radius.circular(21)),
               ),
               context: context,
-              builder: (_) => BottomSheet(
-                onClosing: () {},
-                builder: (_) => Container(),
-                enableDrag: false,
-                elevation: 9,
-                backgroundColor: const Color(0xfff3f3f3),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: const Radius.circular(21),
-                    topRight: const Radius.circular(21),
-                  ),
-                ),
-              ),
+              builder: (_) => AboutBottomSheet(),
             );
           }
         },
