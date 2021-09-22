@@ -24,13 +24,7 @@ class PageBlueprint extends StatelessWidget {
         backgroundColor: const Color(0xfff3f3f3),
         centerTitle: true,
         automaticallyImplyLeading: showLeadingIconButton,
-        leading: showLeadingIconButton & (leadingIconButton == null)
-            ? IconButton(
-                icon: Icon(Icons.arrow_back_rounded),
-                onPressed: () => Navigator.pop(context),
-                color: const Color(0xff303030),
-              )
-            : Container(),
+        leading: leadingIconButton,
         title: Text(
           title,
           style: TextStyle(

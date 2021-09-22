@@ -4,7 +4,9 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qrapp/src/pages/action_pages/scanned_qrcode_page.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
 class ScanPage extends StatefulWidget {
@@ -15,7 +17,7 @@ class ScanPage extends StatefulWidget {
 }
 
 class _ScanPageState extends State<ScanPage> {
-  Barcode? result;
+  late Barcode result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
 
@@ -45,16 +47,21 @@ class _ScanPageState extends State<ScanPage> {
   }
 
   void _onQRViewCreated(QRViewController controller) {
-    setState(() {
-      this.controller = controller;
-    });
+    setState(() => this.controller = controller);
     controller.scannedDataStream.listen((scanData) async {
-      setState(() {
-        result = scanData;
-        print(result!.code);
-      });
+      setState(() => result = scanData);
       HapticFeedback.lightImpact();
       await controller.pauseCamera();
+      Navigator.push(
+        context,
+        PageTransition(
+          type: PageTransitionType.fade,
+          curve: Curves.easeInToLinear,
+          duration: const Duration(milliseconds: 210),
+          reverseDuration: const Duration(milliseconds: 210),
+          child: ScannedQRCodePage(result: result,)
+        ),
+      );
     });
   }
 
