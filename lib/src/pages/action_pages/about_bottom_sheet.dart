@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:qrapp/src/pages/about_pages/author_page.dart';
 import 'package:qrapp/src/pages/about_pages/open_source_libraries_page.dart';
+import 'package:qrapp/src/widgets/about_bottom_sheet_list_tile.dart';
 
 class AboutBottomSheet extends StatelessWidget {
   const AboutBottomSheet({Key? key}) : super(key: key);
@@ -25,91 +26,24 @@ class AboutBottomSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              title: Text(
-                'About',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: const Color(0xff303030),
-                ),
-              ),
+            AboutBottomSheetListTile(
+              title: 'About',
+              isTitle: true,
             ),
-            ListTile(
-              minLeadingWidth: 0,
-              leading: const Icon(
-                Icons.account_circle_rounded,
-                color: const Color(0xff303030),
-                size: 18,
-              ),
-              title: Text(
-                'Author',
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 18,
-                  color: const Color(0xff303030),
-                ),
-              ),
-              onTap: () => Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.fade,
-                    curve: Curves.easeInToLinear,
-                    duration: const Duration(milliseconds: 210),
-                    reverseDuration: const Duration(milliseconds: 210),
-                    child: AuthorPage(),
-                  )),
+            AboutBottomSheetListTile(
+              title: 'Author',
+              iconData: Icons.code_rounded,
+              page: AuthorPage(),
             ),
-            ListTile(
-              minLeadingWidth: 0,
-              leading: const Icon(
-                Icons.article_rounded,
-                color: const Color(0xff303030),
-                size: 18,
-              ),
-              title: Text(
-                'License',
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 18,
-                  color: const Color(0xff303030),
-                ),
-              ),
-              onTap: () => Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.fade,
-                    curve: Curves.easeInToLinear,
-                    duration: const Duration(milliseconds: 210),
-                    reverseDuration: const Duration(milliseconds: 210),
-                    child: LicensePage(),
-                  )),
+            AboutBottomSheetListTile(
+              title: 'Licenses',
+              iconData: Icons.article_rounded,
+              page: LicensePage(),
             ),
-            ListTile(
-              minLeadingWidth: 0,
-              leading: const Icon(
-                Icons.source_rounded,
-                color: const Color(0xff303030),
-                size: 18,
-              ),
-              title: Text(
-                'Open Source Libraries',
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 18,
-                  color: const Color(0xff303030),
-                ),
-              ),
-              onTap: () => Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.fade,
-                    curve: Curves.easeInToLinear,
-                    duration: const Duration(milliseconds: 210),
-                    reverseDuration: const Duration(milliseconds: 210),
-                    child: OpenSourceLibrariesPage(),
-                  )),
+            AboutBottomSheetListTile(
+              title: 'Open Source Libraries',
+              iconData: Icons.source_rounded,
+              page: OpenSourceLibrariesPage(),
             ),
           ],
         ),
