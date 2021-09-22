@@ -16,10 +16,10 @@ class QrApp extends StatelessWidget {
       ),
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-          statusBarColor: Colors.grey[200],
+          statusBarColor: const Color(0xfff3f3f3),
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark,
-          systemNavigationBarColor: Colors.grey[200],
+          systemNavigationBarColor: const Color(0xfff3f3f3),
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
