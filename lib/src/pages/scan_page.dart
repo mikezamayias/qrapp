@@ -62,6 +62,7 @@ class _ScanPageState extends State<ScanPage> {
           child: ScannedQRCodePage(result: result,)
         ),
       );
+      await controller.resumeCamera();
     });
   }
 
