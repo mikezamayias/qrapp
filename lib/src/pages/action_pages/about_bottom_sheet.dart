@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:qrapp/src/pages/about_pages/author_page.dart';
+import 'package:qrapp/src/pages/about_pages/open_source_libraries_page.dart';
 
 class AboutBottomSheet extends StatelessWidget {
   const AboutBottomSheet({Key? key}) : super(key: key);
@@ -23,13 +26,9 @@ class AboutBottomSheet extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
-              leading: const Icon(
-                Icons.info_rounded,
-                color: const Color(0xff303030),
-                size: 24,
-              ),
               title: Text(
                 'About',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -38,6 +37,7 @@ class AboutBottomSheet extends StatelessWidget {
               ),
             ),
             ListTile(
+              minLeadingWidth: 0,
               leading: const Icon(
                 Icons.account_circle_rounded,
                 color: const Color(0xff303030),
@@ -51,9 +51,18 @@ class AboutBottomSheet extends StatelessWidget {
                   color: const Color(0xff303030),
                 ),
               ),
-              onTap: () => print('Author'),
+              onTap: () => Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    curve: Curves.easeInToLinear,
+                    duration: const Duration(milliseconds: 210),
+                    reverseDuration: const Duration(milliseconds: 210),
+                    child: AuthorPage(),
+                  )),
             ),
             ListTile(
+              minLeadingWidth: 0,
               leading: const Icon(
                 Icons.article_rounded,
                 color: const Color(0xff303030),
@@ -67,9 +76,18 @@ class AboutBottomSheet extends StatelessWidget {
                   color: const Color(0xff303030),
                 ),
               ),
-              onTap: () => print('License'),
+              onTap: () => Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    curve: Curves.easeInToLinear,
+                    duration: const Duration(milliseconds: 210),
+                    reverseDuration: const Duration(milliseconds: 210),
+                    child: LicensePage(),
+                  )),
             ),
             ListTile(
+              minLeadingWidth: 0,
               leading: const Icon(
                 Icons.source_rounded,
                 color: const Color(0xff303030),
@@ -83,7 +101,15 @@ class AboutBottomSheet extends StatelessWidget {
                   color: const Color(0xff303030),
                 ),
               ),
-              onTap: () => print('Open Source Libraries'),
+              onTap: () => Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    curve: Curves.easeInToLinear,
+                    duration: const Duration(milliseconds: 210),
+                    reverseDuration: const Duration(milliseconds: 210),
+                    child: OpenSourceLibrariesPage(),
+                  )),
             ),
           ],
         ),
