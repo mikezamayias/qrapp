@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qrapp/src/pages/action_pages/about_bottom_sheet.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
@@ -33,6 +34,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: SimpleGestureDetector(
         onVerticalSwipe: (direction) {
           if (direction == SwipeDirection.up) {
+            HapticFeedback.lightImpact();
             showModalBottomSheet(
               isDismissible: false,
               barrierColor: const Color(0xcc0303030),

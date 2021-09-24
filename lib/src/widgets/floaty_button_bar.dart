@@ -15,8 +15,6 @@ class FloatyButtonBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(21.0),
       child: Card(
-        color: Color(0xfff3f3f3),
-        shadowColor: Color(0xff303030),
         elevation: 9,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(21),
