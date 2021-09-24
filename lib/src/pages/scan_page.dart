@@ -35,7 +35,7 @@ class _ScanPageState extends State<ScanPage> {
   Widget build(BuildContext context) {
     return PageBlueprint(
       title: 'Scan QR Code',
-      bodyWidget: _buildQrView(context),
+      body: _buildQrView(context),
     );
   }
 

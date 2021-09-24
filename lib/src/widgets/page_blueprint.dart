@@ -7,14 +7,14 @@ class PageBlueprint extends StatelessWidget {
     this.showLeadingIconButton = false,
     this.leadingIconButton,
     this.trailingActions,
-    this.bodyWidget,
+    this.body,
   }) : super(key: key);
 
   final String title;
   final bool showLeadingIconButton;
   final IconButton? leadingIconButton;
   final List<IconButton>? trailingActions;
-  final Widget? bodyWidget;
+  final Widget? body;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class PageBlueprint extends StatelessWidget {
         ),
         actions: trailingActions,
       ),
-      body: bodyWidget,
+      body: body,
     );
   }
 }

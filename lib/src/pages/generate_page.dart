@@ -34,7 +34,7 @@ class _GeneratePageState extends State<GeneratePage> {
   Widget build(BuildContext context) {
     return PageBlueprint(
       title: 'Generate QR Code',
-      bodyWidget: Center(
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
           child: TextFormField(

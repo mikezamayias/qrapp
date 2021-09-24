@@ -33,7 +33,7 @@ class GeneratedQRCodePage extends StatelessWidget {
           ),
         ),
       ],
-      bodyWidget: Center(
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
           child: QrImage(

@@ -41,7 +41,7 @@ class _ScannedCodePageState extends State<ScannedQRCodePage> {
           ),
         ),
       ],
-      bodyWidget: Center(
+      body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
