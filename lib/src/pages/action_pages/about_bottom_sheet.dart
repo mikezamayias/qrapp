@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../about_pages/about_author_page.dart';
 import '../about_pages/about_licenses_page.dart';
-import '../about_pages/about_open_source_libraries_page.dart';
 import '../../widgets/about_bottom_sheet_list_tile.dart';
 
 class AboutBottomSheet extends StatelessWidget {
@@ -40,11 +39,6 @@ class AboutBottomSheet extends StatelessWidget {
               title: 'Licenses',
               iconData: Icons.article_rounded,
               page: AboutLicensesPage(),
-            ),
-            AboutBottomSheetListTile(
-              title: 'Open Source Libraries',
-              iconData: Icons.source_rounded,
-              page: AboutOpenSourceLibrariesPage(),
             ),
           ],
         ),
