@@ -3,10 +3,10 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../widgets/page_blueprint.dart';
 
-class GeneratedQRCodePage extends StatelessWidget {
+class GeneratedQRCodeView extends StatelessWidget {
   final String data;
 
-  const GeneratedQRCodePage({
+  const GeneratedQRCodeView({
     Key? key,
     required this.data,
   }) : super(key: key);

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../about_pages/about_author_page.dart';
-import '../about_pages/about_licenses_page.dart';
+import '../about_views/about_author_view.dart';
+import '../about_views/about_licenses_view.dart';
+
 import '../../widgets/about_bottom_sheet_list_tile.dart';
 
-class AboutBottomSheet extends StatelessWidget {
-  const AboutBottomSheet({Key? key}) : super(key: key);
+class AboutBottomSheetView extends StatelessWidget {
+  const AboutBottomSheetView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +34,12 @@ class AboutBottomSheet extends StatelessWidget {
             AboutBottomSheetListTile(
               title: 'Author',
               iconData: Icons.code_rounded,
-              page: AboutAuthorPage(),
+              page: AboutAuthorView(),
             ),
             AboutBottomSheetListTile(
               title: 'Licenses',
               iconData: Icons.article_rounded,
-              page: AboutLicensesPage(),
+              page: AboutLicensesView(),
             ),
           ],
         ),

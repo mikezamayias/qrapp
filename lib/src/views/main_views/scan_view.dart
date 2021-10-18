@@ -4,20 +4,21 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:page_transition/page_transition.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-import 'action_pages/scanned_qrcode_page.dart';
-import '../widgets/page_blueprint.dart';
+import '../action_views/scanned_qrcode_view.dart';
+import '../../widgets/page_blueprint.dart';
 
-class ScanPage extends StatefulWidget {
-  const ScanPage({Key? key}) : super(key: key);
+class ScanView extends StatefulWidget {
+  const ScanView({Key? key}) : super(key: key);
 
   @override
-  State<ScanPage> createState() => _ScanPageState();
+  State<ScanView> createState() => _ScanViewState();
 }
 
-class _ScanPageState extends State<ScanPage> {
+class _ScanViewState extends State<ScanView> {
   late Barcode result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
@@ -60,7 +61,7 @@ class _ScanPageState extends State<ScanPage> {
           curve: Curves.easeInToLinear,
           duration: const Duration(milliseconds: 210),
           reverseDuration: const Duration(milliseconds: 210),
-          child: ScannedQRCodePage(result: result,)
+          child: ScannedQRCodeView(result: result,)
         ),
       );
       await controller.resumeCamera();

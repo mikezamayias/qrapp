@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:qrapp/src/pages/action_pages/about_bottom_sheet.dart';
+
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
-import '../widgets/bottom_nav_bar_buttons.dart';
-import 'generate_page.dart';
-import 'scan_page.dart';
+import '../../views/action_views/about_bottom_sheet_view.dart';
+import '../../widgets/bottom_nav_bar_buttons.dart';
+import '../main_views/generate_view.dart';
+import 'scan_view.dart';
 
 enum _SelectedTab { scan, generate }
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+class HomeView extends StatefulWidget {
+  HomeView({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeViewState extends State<HomeView> {
   _SelectedTab _selectedTab = _SelectedTab.scan;
-  List _pages = [GeneratePage(), ScanPage()];
+  List _pages = [GenerateView(), ScanView()];
 
   void _handleIndexChanged(int i) {
     setState(() => _selectedTab = _SelectedTab.values[i]);
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.all(Radius.circular(21)),
               ),
               context: context,
-              builder: (_) => AboutBottomSheet(),
+              builder: (_) => AboutBottomSheetView(),
             );
           }
         },

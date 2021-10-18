@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
-import 'action_pages/generated_qrcode_page.dart';
+import '../action_views/generated_qrcode_view.dart';
 
-class GeneratePage extends StatefulWidget {
-  const GeneratePage({Key? key}) : super(key: key);
+class GenerateView extends StatefulWidget {
+  const GenerateView({Key? key}) : super(key: key);
 
   @override
-  State<GeneratePage> createState() => _GeneratePageState();
+  State<GenerateView> createState() => _GenerateViewState();
 }
 
-class _GeneratePageState extends State<GeneratePage> {
+class _GenerateViewState extends State<GenerateView> {
   String data = '';
 
   void _updateData(value) => setState(() => data = value);
@@ -24,7 +24,7 @@ class _GeneratePageState extends State<GeneratePage> {
           curve: Curves.easeInToLinear,
           duration: const Duration(milliseconds: 210),
           reverseDuration: const Duration(milliseconds: 210),
-          child: GeneratedQRCodePage(
+          child: GeneratedQRCodeView(
             data: value,
           ),
         ),

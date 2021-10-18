@@ -6,10 +6,10 @@ import '../../widgets/code_type.dart';
 import '../../widgets/page_blueprint.dart';
 import '../../widgets/code_data_string.dart';
 
-class ScannedQRCodePage extends StatefulWidget {
+class ScannedQRCodeView extends StatefulWidget {
   final Barcode result;
 
-  ScannedQRCodePage({
+  ScannedQRCodeView({
     Key? key,
     required this.result,
   }) : super(key: key);
@@ -18,7 +18,7 @@ class ScannedQRCodePage extends StatefulWidget {
   _ScannedCodePageState createState() => _ScannedCodePageState();
 }
 
-class _ScannedCodePageState extends State<ScannedQRCodePage> {
+class _ScannedCodePageState extends State<ScannedQRCodeView> {
   @override
   Widget build(BuildContext context) {
     return PageBlueprint(
