@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import '../../widgets/code_data_qrcode.dart';
+import '../../widgets/code_data_string.dart';
 import '../../widgets/code_type.dart';
 import '../../widgets/page_blueprint.dart';
-import '../../widgets/code_data_string.dart';
 
 class ScannedQRCodeView extends StatefulWidget {
   final Barcode result;
@@ -49,7 +49,7 @@ class _ScannedCodePageState extends State<ScannedQRCodeView> {
             CodeType(type: 'Format:'),
             CodeDataString(data: widget.result.format.toString()),
             CodeType(type: 'Data:'),
-            CodeDataString(data: widget.result.code),
+            CodeDataString(data: widget.result.code!),
             CodeType(type: 'QR Code:'),
             CodeDataQRCode(data: widget.result.code),
           ],
