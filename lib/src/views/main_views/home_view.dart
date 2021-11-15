@@ -21,7 +21,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   _SelectedTab _selectedTab = _SelectedTab.scan;
-  List _pages = [GenerateView(), ScanView()];
+  List<StatefulWidget> _pages = [GenerateView(), ScanView()];
 
   void _handleIndexChanged(int i) {
     setState(() => _selectedTab = _SelectedTab.values[i]);
