@@ -7,8 +7,8 @@ import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 // custom widgets
 import '../action_views/about_bottom_sheet_view.dart';
 import '../../widgets/bottom_nav_bar_buttons.dart';
-import '../main_views/generate_view.dart';
-import '../main_views/scan_view.dart';
+import '../generate_page/generate_page.dart';
+import '../scan_page/scan_page.dart';
 
 enum _SelectedTab { scan, generate }
 
@@ -21,7 +21,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   _SelectedTab _selectedTab = _SelectedTab.scan;
-  List<StatefulWidget> _pages = [GenerateView(), ScanView()];
+  List<StatefulWidget> _pages = [GeneratePage(), ScanPage()];
 
   void _handleIndexChanged(int i) {
     setState(() => _selectedTab = _SelectedTab.values[i]);

@@ -7,14 +7,14 @@ import 'package:page_transition/page_transition.dart';
 import '../../widgets/page_blueprint.dart';
 import '../action_views/generated_qrcode_view.dart';
 
-class GenerateView extends StatefulWidget {
-  const GenerateView({Key? key}) : super(key: key);
+class GeneratePage extends StatefulWidget {
+  const GeneratePage({Key? key}) : super(key: key);
 
   @override
-  State<GenerateView> createState() => _GenerateViewState();
+  State<GeneratePage> createState() => _GeneratePageState();
 }
 
-class _GenerateViewState extends State<GenerateView> {
+class _GeneratePageState extends State<GeneratePage> {
   String data = '';
 
   void _updateData(value) => setState(() => data = value);

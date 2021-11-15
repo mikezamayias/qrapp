@@ -13,14 +13,14 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import '../action_views/scanned_qrcode_view.dart';
 import '../../widgets/page_blueprint.dart';
 
-class ScanView extends StatefulWidget {
-  const ScanView({Key? key}) : super(key: key);
+class ScanPage extends StatefulWidget {
+  const ScanPage({Key? key}) : super(key: key);
 
   @override
-  State<ScanView> createState() => _ScanViewState();
+  State<ScanPage> createState() => _ScanPageState();
 }
 
-class _ScanViewState extends State<ScanView> {
+class _ScanPageState extends State<ScanPage> {
   late Barcode result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
