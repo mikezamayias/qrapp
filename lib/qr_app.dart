@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'src/themes.dart';
-import 'src/views/home_page/home_view.dart';
+import 'src/views/home_page/home_page.dart';
 
 class QrApp extends StatefulWidget {
   @override
