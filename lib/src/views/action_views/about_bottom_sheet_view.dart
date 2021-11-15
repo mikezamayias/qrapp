@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // custom widgets
-import '../about_views/about_author_view.dart';
-import '../about_views/about_licenses_view.dart';
+import '../about_page/about_author_view.dart';
+import '../about_page/about_licenses_view.dart';
 import '../../widgets/about_bottom_sheet_list_tile.dart';
 
 class AboutBottomSheetView extends StatelessWidget {
