@@ -1,8 +1,10 @@
+// flutter packages
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+// pub packages
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
+// custom widgets
 import '../../views/action_views/about_bottom_sheet_view.dart';
 import '../../widgets/bottom_nav_bar_buttons.dart';
 import '../main_views/generate_view.dart';
