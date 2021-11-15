@@ -5,21 +5,21 @@ import 'package:flutter/services.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
 // custom widgets
-import '../../views/action_views/about_bottom_sheet_view.dart';
+import '../action_views/about_bottom_sheet_view.dart';
 import '../../widgets/bottom_nav_bar_buttons.dart';
 import '../main_views/generate_view.dart';
-import 'scan_view.dart';
+import '../main_views/scan_view.dart';
 
 enum _SelectedTab { scan, generate }
 
-class HomeView extends StatefulWidget {
-  HomeView({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomeViewState createState() => _HomeViewState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomePageState extends State<HomePage> {
   _SelectedTab _selectedTab = _SelectedTab.scan;
   List<StatefulWidget> _pages = [GenerateView(), ScanView()];
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'src/themes.dart';
-import 'src/views/main_views/home_view.dart';
+import 'src/views/home_page/home_view.dart';
 
 class QrApp extends StatefulWidget {
   @override
@@ -32,7 +32,7 @@ class _QrAppState extends State<QrApp> {
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
-        child: HomeView(),
+        child: HomePage(),
       ),
     );
   }
