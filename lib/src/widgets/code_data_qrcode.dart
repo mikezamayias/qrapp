@@ -1,4 +1,6 @@
+// flutter packages
 import 'package:flutter/material.dart';
+// pub packages
 import 'package:qr_flutter/qr_flutter.dart';
 
 class CodeDataQRCode extends StatelessWidget {

@@ -1,4 +1,6 @@
+// flutter packages
 import 'package:flutter/material.dart';
+// pub packages
 import 'package:google_fonts/google_fonts.dart';
 
 CustomTheme currentTheme = CustomTheme();
