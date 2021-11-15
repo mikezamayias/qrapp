@@ -1,13 +1,15 @@
+// dart packages
 import 'dart:developer';
 import 'dart:io';
-
+// flutter packages
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+// pub packages
 import 'package:page_transition/page_transition.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
+// custom widgets
 import '../action_views/scanned_qrcode_view.dart';
 import '../../widgets/page_blueprint.dart';
 

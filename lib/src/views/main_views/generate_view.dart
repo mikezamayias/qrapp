@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
+// flutter packages
 import 'package:flutter/material.dart';
+// pub packages
 import 'package:page_transition/page_transition.dart';
-import 'package:qrapp/src/widgets/page_blueprint.dart';
 
+// custom widgets
+import '../../widgets/page_blueprint.dart';
 import '../action_views/generated_qrcode_view.dart';
 
 class GenerateView extends StatefulWidget {
