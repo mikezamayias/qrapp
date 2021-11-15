@@ -20,3 +20,9 @@ BottomNavigationBarItem scanNavButton() => _bottomNavButton(
       Icons.qr_code_scanner_rounded,
       'Scan',
     );
+
+BottomNavigationBarItem aboutNavButton() => _bottomNavButton(
+      'About',
+      Icons.info_outline_rounded,
+      'About',
+    );

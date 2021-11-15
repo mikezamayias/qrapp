@@ -67,6 +67,7 @@ class _HomePageState extends State<HomePage> {
           items: <BottomNavigationBarItem>[
             generateNavButton(),
             scanNavButton(),
+            aboutNavButton(),
           ],
         ),
       ),
