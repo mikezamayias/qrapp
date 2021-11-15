@@ -1,6 +1,9 @@
+// flutter packages
 import 'package:flutter/material.dart';
+// pub packages
 import 'package:qr_flutter/qr_flutter.dart';
 
+// custom widgets
 import '../../widgets/page_blueprint.dart';
 
 class GeneratedQRCodeView extends StatelessWidget {

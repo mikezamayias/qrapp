@@ -1,5 +1,8 @@
+// flutter packages
 import 'package:flutter/material.dart';
-import 'package:qrapp/src/widgets/page_blueprint.dart';
+
+// custom packages
+import '../../widgets/page_blueprint.dart';
 
 class AboutLicensesView extends StatelessWidget {
   const AboutLicensesView({Key? key}) : super(key: key);

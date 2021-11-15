@@ -1,6 +1,9 @@
+// flutter packages
 import 'package:flutter/material.dart';
+// pub packages
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
+// custom widgets
 import '../../widgets/code_data_qrcode.dart';
 import '../../widgets/code_data_string.dart';
 import '../../widgets/code_type.dart';
