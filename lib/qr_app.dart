@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // custom widgets
-import 'src/themes.dart';
+import 'src/themes/themes.dart';
 import 'src/views/home_page/home_page.dart';
 
 class QrApp extends StatefulWidget {
