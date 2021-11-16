@@ -7,8 +7,6 @@ import '../generate_page/generate_page.dart';
 import '../scan_page/scan_page.dart';
 import '../about_page/about_page.dart';
 
-enum _SelectedTab { scan, generate, about }
-
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -17,7 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  _SelectedTab _selectedTab = _SelectedTab.scan;
   List<StatefulWidget> _pages = [GeneratePage(), ScanPage(), AboutPage()];
   int _selectedNavIndex = 0;
   final _pageController = PageController(
@@ -32,7 +29,6 @@ class _HomePageState extends State<HomePage> {
 
   void _onTap(int index) {
     setState(() {
-      _selectedTab = _SelectedTab.values[index];
       _pageController.animateToPage(
         index,
         duration: Duration(milliseconds: 300),
