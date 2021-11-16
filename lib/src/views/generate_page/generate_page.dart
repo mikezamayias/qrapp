@@ -6,6 +6,7 @@ import 'package:page_transition/page_transition.dart';
 // custom widgets
 import '../../widgets/page_blueprint.dart';
 import '../action_views/generated_qrcode_view.dart';
+import '../../themes/textformfield_theme.dart';
 
 class GeneratePage extends StatefulWidget {
   const GeneratePage({Key? key}) : super(key: key);
@@ -38,26 +39,34 @@ class _GeneratePageState extends State<GeneratePage> {
       title: 'Generate QR Code',
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(21, 21, 21, 0),
+          padding: const EdgeInsets.all(21),
           child: TextFormField(
             onFieldSubmitted: _showQRCode,
             onChanged: _updateData,
             cursorColor: const Color(0xff303030),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
+              // hintText: 'Encode data to QR code',
               labelText: 'Encode data to QR code',
-              focusColor: const Color(0xff3030),
+              floatingLabelStyle: const TextStyle(
+                color: Color(0xFF303030),
+                fontSize: 21,
+                fontWeight: FontWeight.w600,
+              ),
+              isDense: false,
+              errorMaxLines: 1,
+              errorText: null,
+              errorStyle: const TextStyle(
+                color: Colors.transparent,
+                fontSize: 0,
+              ),
+              alignLabelWithHint: true,
+              focusColor: const Color(0xFF303030),
               labelStyle: const TextStyle(
-                color: const Color(0xff303030),
+                color: Color(0xFF303030),
               ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: const Color(0xff303030),
-                  width: 3.0,
-                  style: BorderStyle.solid,
-                ),
-                borderRadius: const BorderRadius.all(Radius.circular(21)),
-                // gapPadding: 3,
-              ),
+              focusedBorder: stableStateBorder,
+              border: stableStateBorder,
+              enabledBorder: stableStateBorder,
             ),
           ),
         ),
