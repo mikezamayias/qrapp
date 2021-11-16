@@ -19,24 +19,26 @@ class PageBlueprint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xfff3f3f3),
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: const Color(0xfff3f3f3),
-        centerTitle: true,
-        automaticallyImplyLeading: showLeadingIconButton,
-        leading: leadingIconButton,
-        title: Text(
-          title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-            color: const Color(0xff303030),
+        appBar: AppBar(
+          backgroundColor: const Color(0xfff3f3f3),
+          centerTitle: true,
+          automaticallyImplyLeading: showLeadingIconButton,
+          leading: leadingIconButton,
+          title: Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              color: const Color(0xff303030),
+            ),
           ),
+          actions: trailingActions,
         ),
-        actions: trailingActions,
+        body: body,
       ),
-      body: body,
     );
   }
 }
