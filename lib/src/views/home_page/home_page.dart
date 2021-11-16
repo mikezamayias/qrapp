@@ -11,7 +11,7 @@ import '../generate_page/generate_page.dart';
 import '../scan_page/scan_page.dart';
 import '../about_page/about_page.dart';
 
-enum _SelectedTab { scan, generate , about}
+enum _SelectedTab { scan, generate, about }
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -23,9 +23,31 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   _SelectedTab _selectedTab = _SelectedTab.scan;
   List<StatefulWidget> _pages = [GeneratePage(), ScanPage(), AboutPage()];
+  int _selectedNavIndex = 0;
+  final _pageController = PageController(
+    initialPage: 0,
+  );
 
-  void _handleIndexChanged(int i) {
-    setState(() => _selectedTab = _SelectedTab.values[i]);
+  void _onPageChanged(int index) {
+    setState(() {
+      _selectedNavIndex = index;
+    });
+  }
+
+  void _onTap(int index) {
+    setState(() {
+      _selectedTab = _SelectedTab.values[index];
+      _pageController.animateToPage(
+        index,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -33,7 +55,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBody: true,
       body: SafeArea(
-        child: _pages[_selectedTab.index],
+        child: PageView(
+          controller: _pageController,
+          children: _pages,
+          onPageChanged: _onPageChanged,
+        ),
       ),
       bottomNavigationBar: SimpleGestureDetector(
         onVerticalSwipe: (direction) {
@@ -59,11 +85,8 @@ class _HomePageState extends State<HomePage> {
           enableFeedback: true,
           selectedItemColor: const Color(0xff303030),
           unselectedItemColor: const Color(0x40303030),
-          currentIndex: _selectedTab.index,
-          onTap: (i) {
-            _handleIndexChanged(i);
-            print(_selectedTab.toString());
-          },
+          currentIndex: _selectedNavIndex,
+          onTap: _onTap,
           items: <BottomNavigationBarItem>[
             generateNavButton(),
             scanNavButton(),
