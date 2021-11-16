@@ -16,7 +16,7 @@ class GeneratePage extends StatefulWidget {
 }
 
 class _GeneratePageState extends State<GeneratePage> {
-  String data = '';
+  String data = 'QRapp';
 
   void _updateData(value) => setState(() => data = value);
 
@@ -39,18 +39,22 @@ class _GeneratePageState extends State<GeneratePage> {
       title: 'Generate QR Code',
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(21),
+          padding: const EdgeInsets.all(15),
           child: TextFormField(
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
             onFieldSubmitted: _showQRCode,
             onChanged: _updateData,
             cursorColor: const Color(0xff303030),
             decoration: InputDecoration(
-              // hintText: 'Encode data to QR code',
-              labelText: 'Encode data to QR code',
+              labelText: 'Data',
               floatingLabelStyle: const TextStyle(
                 color: Color(0xFF303030),
                 fontSize: 21,
                 fontWeight: FontWeight.w600,
+                wordSpacing: 0,
               ),
               isDense: false,
               errorMaxLines: 1,
