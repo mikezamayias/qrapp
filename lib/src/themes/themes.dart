@@ -1,5 +1,6 @@
 // flutter packages
 import 'package:flutter/material.dart';
+
 // pub packages
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,6 +24,24 @@ class CustomTheme with ChangeNotifier {
       backgroundColor: const Color(0xfff3f3f3),
       scaffoldBackgroundColor: const Color(0xfff3f3f3),
       fontFamily: GoogleFonts.firaSans().fontFamily,
+      iconTheme: IconThemeData(
+        color: const Color(0xFFBE9279),
+        size: 24,
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedIconTheme: IconThemeData(
+          // color: const Color(0xFFBE9279),
+          color: const Color(0xFFC4DDF2),
+          size: 30,
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: const Color(0x99A8B5BF),
+          size: 30,
+        ),
+        backgroundColor: const Color(0xFFBE9279),
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+      ),
       textTheme: TextTheme(
         headline1: TextStyle(
           color: const Color(0xff303030),
