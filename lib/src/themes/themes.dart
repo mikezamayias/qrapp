@@ -30,14 +30,14 @@ class CustomTheme with ChangeNotifier {
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedIconTheme: IconThemeData(
-          color: const Color(0xFFF3F3F3),
+          color: const Color(0xFFBE9279),
           size: 30,
         ),
         unselectedIconTheme: IconThemeData(
-          color: const Color(0xFF303030),
+          color: const Color(0x99303030),
           size: 30,
         ),
-        backgroundColor: const Color(0xFFBE9279),
+        backgroundColor: const Color(0xFFF3F3F3),
         showUnselectedLabels: false,
         showSelectedLabels: false,
       ),
