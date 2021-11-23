@@ -14,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _messageController = TextEditingController();
   List<StatefulWidget> _pages = [GeneratePage(), ScanPage(), AboutPage()];
   int _selectedNavIndex = 0;
   final _pageController = PageController(initialPage: 0);
