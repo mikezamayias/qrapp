@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // custom widgets
-import '../../widgets/bottom_nav_bar_buttons.dart';
 import '../generate_page/generate_page.dart';
 import '../scan_page/scan_page.dart';
 import '../about_page/about_page.dart';
@@ -60,9 +59,21 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _selectedNavIndex,
         onTap: _onTap,
         items: <BottomNavigationBarItem>[
-          generateNavButton(),
-          scanNavButton(),
-          aboutNavButton(),
+          BottomNavigationBarItem(
+            tooltip: 'Show QR code history',
+            icon: Icon(Icons.history_rounded),
+            label: 'History',
+          ),
+          BottomNavigationBarItem(
+            tooltip: 'Scan QR code',
+            icon: Icon(Icons.qr_code_rounded),
+            label: 'Scan',
+          ),
+          BottomNavigationBarItem(
+            tooltip: 'About',
+            icon: Icon(Icons.info_outline_rounded),
+            label: 'About',
+          )
         ],
       ),
     );
