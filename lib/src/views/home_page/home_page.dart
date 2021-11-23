@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             tooltip: 'Scan QR code',
-            icon: Icon(Icons.qr_code_rounded),
+            icon: Icon(Icons.qr_code_scanner_rounded),
             label: 'Scan',
           ),
           BottomNavigationBarItem(
