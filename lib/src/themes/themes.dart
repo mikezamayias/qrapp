@@ -19,16 +19,32 @@ class CustomTheme with ChangeNotifier {
 
   static ThemeData get lightTheme {
     return ThemeData(
+      fontFamily: GoogleFonts.montserrat().fontFamily,
+      appBarTheme: AppBarTheme(
+        iconTheme: IconThemeData(
+          color: const Color(0xFF303030),
+        ),
+        color: const Color(0xFFF3F3F3),
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+          color: const Color(0xff303030),
+        ),
+      ),
       shadowColor: const Color(0xff303030),
-      primaryColor: const Color(0xff303030),
+      primaryColor: const Color(0xFFBE9279),
       backgroundColor: const Color(0xfff3f3f3),
       scaffoldBackgroundColor: const Color(0xfff3f3f3),
-      fontFamily: GoogleFonts.firaSans().fontFamily,
       iconTheme: IconThemeData(
         color: const Color(0xFFBE9279),
         size: 24,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        elevation: 9,
+        backgroundColor: const Color(0xCCBE9279),
+        type: BottomNavigationBarType.shifting,
+        enableFeedback: true,
         selectedIconTheme: IconThemeData(
           color: const Color(0xFFBE9279),
           size: 30,
@@ -37,7 +53,6 @@ class CustomTheme with ChangeNotifier {
           color: const Color(0x99303030),
           size: 30,
         ),
-        backgroundColor: const Color(0xFFF3F3F3),
         showUnselectedLabels: false,
         showSelectedLabels: false,
       ),
