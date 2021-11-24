@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // custom widgets
 import '../generate_page/generate_page.dart';
-import '../scan_page/scan_page.dart';
+import '../history_page/history_page.dart';
 import '../about_page/about_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<StatefulWidget> _pages = [GeneratePage(), ScanPage(), AboutPage()];
+  List<StatefulWidget> _pages = [HistoryPage(), GeneratePage(), AboutPage()];
   int _selectedNavIndex = 0;
   final _pageController = PageController(initialPage: 0);
 
