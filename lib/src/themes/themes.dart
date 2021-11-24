@@ -98,6 +98,11 @@ class CustomTheme with ChangeNotifier {
           color: const Color(0xff303030),
         ),
       ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          primary: const Color(0xFFBE9279),
+        ),
+      ),
     );
   }
 
