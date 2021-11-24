@@ -22,14 +22,15 @@ class CustomTheme with ChangeNotifier {
       fontFamily: GoogleFonts.montserrat().fontFamily,
       appBarTheme: AppBarTheme(
         iconTheme: IconThemeData(
-          color: const Color(0xFF303030),
+          color: const Color(0xFFBE9279),
         ),
         color: const Color(0xFFF3F3F3),
+        elevation: 3,
         centerTitle: true,
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 24,
-          color: const Color(0xff303030),
+          color: const Color(0xFFBE9279),
         ),
       ),
       shadowColor: const Color(0xff303030),
@@ -41,7 +42,7 @@ class CustomTheme with ChangeNotifier {
         size: 24,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        elevation: 9,
+        elevation: 3,
         backgroundColor: const Color(0xCCBE9279),
         type: BottomNavigationBarType.shifting,
         enableFeedback: true,

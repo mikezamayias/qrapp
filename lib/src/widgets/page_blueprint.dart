@@ -23,18 +23,9 @@ class PageBlueprint extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xfff3f3f3),
         appBar: AppBar(
-          backgroundColor: const Color(0xfff3f3f3),
-          centerTitle: true,
           automaticallyImplyLeading: showLeadingIconButton,
           leading: leadingIconButton,
-          title: Text(
-            title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-              color: const Color(0xff303030),
-            ),
-          ),
+          title: Text(title),
           actions: trailingActions,
         ),
         body: body,
