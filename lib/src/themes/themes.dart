@@ -22,7 +22,7 @@ class CustomTheme with ChangeNotifier {
       fontFamily: GoogleFonts.montserrat().fontFamily,
       appBarTheme: AppBarTheme(
         iconTheme: IconThemeData(
-          color: const Color(0xFFBE9279),
+          color: const Color(0xFF8F6146),
         ),
         color: const Color(0xFFF3F3F3),
         elevation: 3,
@@ -30,15 +30,15 @@ class CustomTheme with ChangeNotifier {
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 24,
-          color: const Color(0xFFBE9279),
+          color: const Color(0xFF8F6146),
         ),
       ),
       shadowColor: const Color(0xff303030),
-      primaryColor: const Color(0xFFBE9279),
+      primaryColor: const Color(0xFF8F6146),
       backgroundColor: const Color(0xfff3f3f3),
       scaffoldBackgroundColor: const Color(0xfff3f3f3),
       iconTheme: IconThemeData(
-        color: const Color(0xFFBE9279),
+        color: const Color(0xFF8F6146),
         size: 24,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -47,7 +47,7 @@ class CustomTheme with ChangeNotifier {
         type: BottomNavigationBarType.shifting,
         enableFeedback: true,
         selectedIconTheme: IconThemeData(
-          color: const Color(0xFFBE9279),
+          color: const Color(0xFF8F6146),
           size: 30,
         ),
         unselectedIconTheme: IconThemeData(
@@ -100,7 +100,7 @@ class CustomTheme with ChangeNotifier {
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          primary: const Color(0xFFBE9279),
+          primary: const Color(0xFF8F6146),
         ),
       ),
     );
