@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // pub packages
 import 'package:google_fonts/google_fonts.dart';
-import 'package:qrapp/src/themes/textformfield_theme.dart';
 
 CustomTheme currentTheme = CustomTheme();
 

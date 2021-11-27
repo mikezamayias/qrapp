@@ -7,7 +7,6 @@ import 'package:qr_flutter/qr_flutter.dart';
 // custom widgets
 import '../../widgets/page_blueprint.dart';
 import '../action_views/generated_qrcode_view.dart';
-import '../../themes/textformfield_theme.dart';
 
 class GeneratePage extends StatefulWidget {
   const GeneratePage({Key? key}) : super(key: key);
