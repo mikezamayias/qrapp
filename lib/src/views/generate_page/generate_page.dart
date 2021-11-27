@@ -39,7 +39,7 @@ class _GeneratePageState extends State<GeneratePage> {
   @override
   Widget build(BuildContext context) {
     return PageBlueprint(
-      title: 'Generate QR Code',
+      title: 'Generate',
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(15),
@@ -93,7 +93,6 @@ class _GeneratePageState extends State<GeneratePage> {
                   enabledBorder: stableStateBorder,
                 ),
               ),
-              Spacer(flex: 2),
             ],
           ),
         ),
