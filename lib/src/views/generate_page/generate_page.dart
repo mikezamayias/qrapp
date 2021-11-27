@@ -44,7 +44,7 @@ class _GeneratePageState extends State<GeneratePage> {
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -58,7 +58,6 @@ class _GeneratePageState extends State<GeneratePage> {
                   color: const Color(0xff303030),
                 ),
               ),
-              Spacer(),
               TextFormField(
                 controller: _textEditingController,
                 style: const TextStyle(
