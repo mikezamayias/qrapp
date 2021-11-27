@@ -19,11 +19,6 @@ class _AboutPageState extends State<AboutPage> {
       applicationName: 'QRapp',
       applicationVersion: '1.0.0',
       applicationLegalese: 'MIT License',
-      children: <Widget>[
-        Text('This is a demo application for the Flutter framework.'),
-        Text('It is used to demonstrate the Flutter framework.'),
-        Text('It is used to demonstrate the Flutter framework.'),
-      ],
     );
   }
 }
