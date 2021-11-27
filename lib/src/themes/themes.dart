@@ -28,7 +28,7 @@ class CustomTheme with ChangeNotifier {
         ),
         labelStyle: const TextStyle(
           fontSize: 18,
-          color: Color(0xFF8F6146),
+          color: Color(0xFF303030),
           wordSpacing: 0,
         ),
         isDense: true,
