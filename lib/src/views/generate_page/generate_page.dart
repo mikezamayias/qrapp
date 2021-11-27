@@ -69,27 +69,7 @@ class _GeneratePageState extends State<GeneratePage> {
                 cursorColor: const Color(0xff303030),
                 decoration: InputDecoration(
                   labelText: 'Data',
-                  floatingLabelStyle: const TextStyle(
-                    color: Color(0xFF303030),
-                    fontSize: 21,
-                    fontWeight: FontWeight.w600,
-                    wordSpacing: 0,
-                  ),
-                  isDense: false,
-                  errorMaxLines: 1,
                   errorText: null,
-                  errorStyle: const TextStyle(
-                    color: Colors.transparent,
-                    fontSize: 0,
-                  ),
-                  alignLabelWithHint: true,
-                  focusColor: const Color(0xFF303030),
-                  labelStyle: const TextStyle(
-                    color: Color(0xFF303030),
-                  ),
-                  focusedBorder: stableStateBorder,
-                  border: stableStateBorder,
-                  enabledBorder: stableStateBorder,
                 ),
               ),
             ],

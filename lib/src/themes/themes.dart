@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // pub packages
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qrapp/src/themes/textformfield_theme.dart';
 
 CustomTheme currentTheme = CustomTheme();
 
@@ -20,6 +21,51 @@ class CustomTheme with ChangeNotifier {
   static ThemeData get lightTheme {
     return ThemeData(
       fontFamily: GoogleFonts.montserrat().fontFamily,
+      inputDecorationTheme: InputDecorationTheme(
+        floatingLabelStyle: const TextStyle(
+          fontSize: 21,
+          color: Color(0xFF303030),
+          wordSpacing: 0,
+        ),
+        labelStyle: const TextStyle(
+          fontSize: 18,
+          color: Color(0xFF8F6146),
+          wordSpacing: 0,
+        ),
+        isDense: true,
+        focusColor: const Color(0xFF8F6146),
+        alignLabelWithHint: true,
+        errorMaxLines: 0,
+        errorStyle: const TextStyle(
+          fontSize: 0,
+          color: Colors.transparent,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: const Color(0xFF303030),
+            width: 3,
+            style: BorderStyle.solid,
+          ),
+          borderRadius: BorderRadius.circular(60),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: const Color(0xFF303030),
+            width: 3,
+            style: BorderStyle.solid,
+          ),
+          borderRadius: BorderRadius.circular(60),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.blue,
+            width: 3.0,
+            style: BorderStyle.solid,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(60)),
+          gapPadding: 3.0,
+        ),
+      ),
       appBarTheme: AppBarTheme(
         iconTheme: IconThemeData(
           color: const Color(0xFF8F6146),
