@@ -2,7 +2,6 @@
 import 'dart:developer';
 import 'dart:io';
 // flutter packages
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // pub packages
@@ -59,12 +58,13 @@ class _ScanPageState extends State<ScanPage> {
       Navigator.push(
         context,
         PageTransition(
-          type: PageTransitionType.fade,
-          curve: Curves.easeInToLinear,
-          duration: const Duration(milliseconds: 210),
-          reverseDuration: const Duration(milliseconds: 210),
-          child: ScannedQRCodeView(result: result,)
-        ),
+            type: PageTransitionType.fade,
+            curve: Curves.easeInToLinear,
+            duration: const Duration(milliseconds: 210),
+            reverseDuration: const Duration(milliseconds: 210),
+            child: ScannedQRCodeView(
+              result: result,
+            )),
       );
       await controller.resumeCamera();
     });
