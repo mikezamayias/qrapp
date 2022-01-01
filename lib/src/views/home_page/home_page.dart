@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: const Color(0x40303030),
         currentIndex: _selectedNavIndex,
         onTap: _onTap,
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             tooltip: 'Show QR code history',
             icon: Icon(Icons.history_rounded),
