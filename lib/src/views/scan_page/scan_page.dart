@@ -1,6 +1,7 @@
 // dart packages
 import 'dart:developer';
 import 'dart:io';
+
 // flutter packages
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,9 +9,9 @@ import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
+import '../../widgets/page_blueprint.dart';
 // custom widgets
 import '../action_views/scanned_qrcode_view.dart';
-import '../../widgets/page_blueprint.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
