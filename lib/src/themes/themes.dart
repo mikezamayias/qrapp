@@ -89,13 +89,8 @@ class CustomTheme with ChangeNotifier {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         elevation: 0,
         enableFeedback: true,
-        selectedIconTheme: IconThemeData(
-          color: Color(0xFF8F6146),
-          size: 30,
-        ),
-        selectedLabelStyle: TextStyle(
-          color: Color(0xFF8F6146),
-        ),
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Color(0xFF8F6146),
       ),
       textTheme: const TextTheme(
         headline1: TextStyle(

@@ -51,9 +51,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        enableFeedback: true,
-        selectedItemColor: const Color(0xff303030),
-        unselectedItemColor: const Color(0x40303030),
         currentIndex: _selectedNavIndex,
         onTap: _onTap,
         items: const <BottomNavigationBarItem>[
