@@ -9,7 +9,7 @@ class CardInfo extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(9),
       child: Card(
-        elevation: 5,
+        elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(21),
         ),
