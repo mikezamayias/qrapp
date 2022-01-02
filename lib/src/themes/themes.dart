@@ -74,7 +74,7 @@ class CustomTheme with ChangeNotifier {
           color: Color(0xFF8F6146),
         ),
         color: Color(0xFFF3F3F3),
-        elevation: 3,
+        elevation: 0,
         centerTitle: true,
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.bold,
