@@ -73,7 +73,7 @@ class CustomTheme with ChangeNotifier {
         iconTheme: IconThemeData(
           color: Color(0xFF8F6146),
         ),
-        color: Color(0xFFF3F3F3),
+        color: Colors.white,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: TextStyle(
