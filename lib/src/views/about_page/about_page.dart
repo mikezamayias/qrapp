@@ -1,5 +1,6 @@
 // flutter packages
 import 'package:flutter/material.dart';
+import 'package:qrapp/src/models/expansion_panel_info.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
 class AboutPage extends StatefulWidget {
@@ -10,55 +11,6 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  static final List<AboutSection> sections = [
-    AboutSection(
-      title: 'Version',
-      value: '1.0.0',
-    ),
-    AboutSection(
-      title: 'Author',
-      value: 'Mike Zamayias',
-    ),
-  ];
-  static final List<ExpansionPanelInfo> _expansionStates = [
-    ExpansionPanelInfo(
-      title: 'App Details',
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(21, 0, 21, 12),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (final section in sections)
-              Row(
-                children: [
-                  Text(
-                    section.title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    section.value,
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              )
-          ],
-        ),
-      ),
-    ),
-    ExpansionPanelInfo(
-      title: 'Hello World 2',
-      body: const Padding(
-        padding: EdgeInsets.all(9),
-        child: Text('Hello World 2'),
-      ),
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +24,10 @@ class _AboutPageState extends State<AboutPage> {
             expandedHeaderPadding: const EdgeInsets.all(9),
             dividerColor: const Color(0xFF8F6146),
             expansionCallback: (panelIndex, isExpanded) => setState(() {
-              _expansionStates[panelIndex].isExpanded = !isExpanded;
+              expansionStates[panelIndex].isExpanded = !isExpanded;
             }),
             children: [
-              for (final expansionState in _expansionStates)
+              for (final expansionState in expansionStates)
                 ExpansionPanel(
                   canTapOnHeader: true,
                   isExpanded: expansionState.isExpanded ?? true,
@@ -89,25 +41,4 @@ class _AboutPageState extends State<AboutPage> {
       ),
     );
   }
-}
-
-class ExpansionPanelInfo {
-  String title;
-  Widget body;
-  bool? isExpanded;
-
-  ExpansionPanelInfo({
-    required this.title,
-    required this.body,
-  });
-}
-
-class AboutSection {
-  String title;
-  String value;
-
-  AboutSection({
-    required this.title,
-    required this.value,
-  });
 }
