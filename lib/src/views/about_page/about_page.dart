@@ -9,27 +9,101 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
+  static final List<AppInfoSection> sections = [
+    AppInfoSection(
+      title: 'Version',
+      value: '1.0.0',
+    ),
+    AppInfoSection(
+      title: 'Author',
+      value: 'Mike Zamayias',
+    ),
+  ];
+  static final List<ExpansionPanelInfo> _expansionStates = [
+    ExpansionPanelInfo(
+      title: 'App Details',
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(21, 0, 21, 12),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (final section in sections)
+              Row(
+                children: [
+                  Text(
+                    section.title,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    section.value,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              )
+          ],
+        ),
+      ),
+    ),
+    ExpansionPanelInfo(
+      title: 'Hello World 2',
+      body: const Padding(
+        padding: EdgeInsets.all(9),
+        child: Text('Hello World 2'),
+      ),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return const AboutDialog(
-      applicationIcon: Icon(
-        Icons.qr_code_rounded,
-        color: Color(0xFF303030),
-      ),
-      applicationName: 'QRapp',
-      applicationVersion: '1.0.0',
-      applicationLegalese: 'MIT License',
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        ExpansionPanelList(
+          expandedHeaderPadding: const EdgeInsets.all(9),
+          dividerColor: const Color(0xFF8F6146),
+          expansionCallback: (panelIndex, isExpanded) => setState(() {
+            _expansionStates[panelIndex].isExpanded = !isExpanded;
+          }),
+          children: [
+            for (final expansionState in _expansionStates)
+              ExpansionPanel(
+                canTapOnHeader: true,
+                isExpanded: expansionState.isExpanded ?? false,
+                headerBuilder: (context, isExpanded) =>
+                    ListTile(title: Text(expansionState.title)),
+                body: expansionState.body,
+              ),
+          ],
+        ),
+      ],
     );
   }
 }
 
-/* 
-LicensePage(
-      applicationIcon: Icon(
-        Icons.qr_code_rounded,
-        color: const Color(0xFF303030),
-      ),
-      applicationName: 'QRapp!',
-      applicationVersion: '1.0.0',
-      applicationLegalese: 'MIT License',
-    ) */
+class ExpansionPanelInfo {
+  String title;
+  Widget body;
+  bool? isExpanded;
+
+  ExpansionPanelInfo({
+    required this.title,
+    required this.body,
+  });
+}
+
+class AppInfoSection {
+  String title;
+  String value;
+
+  AppInfoSection({
+    required this.title,
+    required this.value,
+  });
+}
