@@ -6,22 +6,13 @@ class PanelHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(9),
-      child: Card(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(21),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: const <Widget>[
-            ListTile(
-              leading: Icon(FontAwesomeIcons.code),
-              title: Text('App'),
-            ),
-          ],
-        ),
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(21),
+      ),
+      child: const ListTile(
+        title: Text('Get in touch'),
       ),
     );
   }

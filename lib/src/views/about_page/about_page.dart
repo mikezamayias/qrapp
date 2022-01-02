@@ -1,6 +1,7 @@
 // flutter packages
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:qrapp/src/models/expansion_panel_section.dart';
+import 'package:qrapp/src/views/about_page/panel_body.dart';
 import 'package:qrapp/src/views/about_page/panel_header.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
@@ -14,9 +15,24 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
-    return const PageBlueprint(
+    return PageBlueprint(
       title: 'About',
-      body: PanelHeader(),
+      body: Padding(
+        padding: const EdgeInsets.all(9),
+        child: ExpandableNotifier(
+          child: Column(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(21)),
+                child: ExpandablePanel(
+                  collapsed: ExpandableButton(child: const PanelHeader()),
+                  expanded: ExpandableButton(child: const PanelBody()),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       // body: Column(
       //   mainAxisSize: MainAxisSize.max,
       //   mainAxisAlignment: MainAxisAlignment.center,
