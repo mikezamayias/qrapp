@@ -1,7 +1,7 @@
 // flutter packages
 import 'package:flutter/material.dart';
 import 'package:qrapp/src/models/expansion_panel_section.dart';
-import 'package:qrapp/src/views/about_page/card_info.dart';
+import 'package:qrapp/src/views/about_page/panel_header.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
 class AboutPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return const PageBlueprint(
       title: 'About',
-      body: CardInfo(),
+      body: PanelHeader(),
       // body: Column(
       //   mainAxisSize: MainAxisSize.max,
       //   mainAxisAlignment: MainAxisAlignment.center,
