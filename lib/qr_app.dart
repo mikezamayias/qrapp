@@ -29,10 +29,10 @@ class _QrAppState extends State<QrApp> {
       themeMode: currentTheme.currentTheme,
       home: const AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-          statusBarColor: Color(0xfff3f3f3),
+          statusBarColor: Colors.white,
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark,
-          systemNavigationBarColor: Color(0xfff3f3f3),
+          systemNavigationBarColor: Colors.white,
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
