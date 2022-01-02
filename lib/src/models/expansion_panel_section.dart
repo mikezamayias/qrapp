@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrapp/src/models/social_media.dart';
 
 import 'about_section.dart';
 
@@ -38,23 +39,11 @@ List<ExpansionPanelSection> get expansionPanelSections => [
       ),
       ExpansionPanelSection(
         title: const Text('Get in touch'),
-        body: Column(
+        body: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            for (final section in sections)
-              Row(
-                children: [
-                  Text(
-                    section.title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Spacer(),
-                  section.content,
-                ],
-              )
+            ...socialButtons
           ],
         ),
       ),
