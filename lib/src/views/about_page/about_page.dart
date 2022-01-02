@@ -1,6 +1,6 @@
 // flutter packages
 import 'package:flutter/material.dart';
-import 'package:qrapp/src/models/expansion_panel_info.dart';
+import 'package:qrapp/src/models/expansion_panel_section.dart';
 import 'package:qrapp/src/widgets/page_blueprint.dart';
 
 class AboutPage extends StatefulWidget {
@@ -11,7 +11,6 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-
   @override
   Widget build(BuildContext context) {
     return PageBlueprint(
@@ -23,17 +22,20 @@ class _AboutPageState extends State<AboutPage> {
           ExpansionPanelList(
             expandedHeaderPadding: const EdgeInsets.all(9),
             dividerColor: const Color(0xFF8F6146),
-            expansionCallback: (panelIndex, isExpanded) => setState(() {
-              expansionStates[panelIndex].isExpanded = !isExpanded;
-            }),
+            expansionCallback: (panelIndex, isExpanded) => setState(
+              () => expansionPanelSections[panelIndex].isExpanded = !isExpanded,
+            ),
             children: [
-              for (final expansionState in expansionStates)
+              for (final expansionPanelSection in expansionPanelSections)
                 ExpansionPanel(
                   canTapOnHeader: true,
-                  isExpanded: expansionState.isExpanded ?? true,
+                  isExpanded: expansionPanelSection.isExpanded ?? true,
                   headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text(expansionState.title)),
-                  body: expansionState.body,
+                      ListTile(title: expansionPanelSection.title),
+                  body: Padding(
+                    padding: const EdgeInsets.all(21.0),
+                    child: expansionPanelSection.body,
+                  ),
                 ),
             ],
           ),
