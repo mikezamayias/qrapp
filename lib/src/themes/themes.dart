@@ -6,6 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 CustomTheme currentTheme = CustomTheme();
 
+// color palette
+// 0xFF00BFA5
+// 0xFF8F6146
+
 class CustomTheme with ChangeNotifier {
   static bool _isLightTheme = true;
 
