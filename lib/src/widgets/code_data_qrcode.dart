@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class CodeDataQRCode extends StatelessWidget {
-  final data;
+  final String? data;
 
   const CodeDataQRCode({
     Key? key,
@@ -16,13 +16,13 @@ class CodeDataQRCode extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(21, 3, 21, 0),
       child: QrImage(
-        data: data,
+        data: data ?? 'QRapp!',
         version: QrVersions.auto,
         size: MediaQuery.of(context).size.width * 0.72,
         foregroundColor: const Color(0xff303030),
-        eyeStyle: QrEyeStyle(
+        eyeStyle: const QrEyeStyle(
           eyeShape: QrEyeShape.square,
-          color: const Color(0xff303030),
+          color: Color(0xff303030),
         ),
       ),
     );

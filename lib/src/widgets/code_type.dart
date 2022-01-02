@@ -16,7 +16,7 @@ class CodeType extends StatelessWidget {
       child: SelectableText(
         type,
         style: const TextStyle(
-          color: const Color(0xff303030),
+          color: Color(0xff303030),
           fontSize: 15,
         ),
         showCursor: true,

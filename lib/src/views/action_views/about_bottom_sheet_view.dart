@@ -16,34 +16,32 @@ class AboutBottomSheetView extends StatelessWidget {
       elevation: 9,
       backgroundColor: const Color(0xfff3f3f3),
       shape: const RoundedRectangleBorder(
-        borderRadius: const BorderRadius.only(
-          topLeft: const Radius.circular(21),
-          topRight: const Radius.circular(21),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(21),
+          topRight: Radius.circular(21),
         ),
       ),
       onClosing: () {},
-      builder: (_) => Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AboutBottomSheetListTile(
-              title: 'About',
-              isTitle: true,
-            ),
-            AboutBottomSheetListTile(
-              title: 'Author',
-              iconData: Icons.code_rounded,
-              page: AboutAuthorView(),
-            ),
-            AboutBottomSheetListTile(
-              title: 'Licenses',
-              iconData: Icons.article_rounded,
-              page: AboutLicensesView(),
-            ),
-          ],
-        ),
+      builder: (_) => Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          AboutBottomSheetListTile(
+            title: 'About',
+            isTitle: true,
+          ),
+          AboutBottomSheetListTile(
+            title: 'Author',
+            iconData: Icons.code_rounded,
+            page: AboutAuthorView(),
+          ),
+          AboutBottomSheetListTile(
+            title: 'Licenses',
+            iconData: Icons.article_rounded,
+            page: AboutLicensesView(),
+          ),
+        ],
       ),
     );
   }

@@ -7,6 +7,8 @@ import 'src/themes/themes.dart';
 import 'src/views/home_page/home_page.dart';
 
 class QrApp extends StatefulWidget {
+  const QrApp({Key? key}) : super(key: key);
+
   @override
   State<QrApp> createState() => _QrAppState();
 }
@@ -25,8 +27,8 @@ class _QrAppState extends State<QrApp> {
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
       themeMode: currentTheme.currentTheme,
-      home: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: const SystemUiOverlayStyle(
+      home: const AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
           statusBarColor: Color(0xfff3f3f3),
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark,

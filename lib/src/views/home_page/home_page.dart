@@ -7,14 +7,14 @@ import '../history_page/history_page.dart';
 import '../about_page/about_page.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<StatefulWidget> _pages = [HistoryPage(), GeneratePage(), AboutPage()];
+  final List<StatefulWidget> _pages = [const HistoryPage(), const GeneratePage(), const AboutPage()];
   int _selectedNavIndex = 0;
   final _pageController = PageController(initialPage: 0);
 
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _pageController.animateToPage(
         index,
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
     });

@@ -9,7 +9,7 @@ class AboutAuthorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageBlueprint(
+    return const PageBlueprint(
       title: 'Author',
     );
   }

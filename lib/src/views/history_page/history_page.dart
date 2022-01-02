@@ -14,7 +14,7 @@ class HistoryPage extends StatefulWidget {
 class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
-    return PageBlueprint(
+    return const PageBlueprint(
       title: 'History',
     );
   }

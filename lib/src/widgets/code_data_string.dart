@@ -16,7 +16,7 @@ class CodeDataString extends StatelessWidget {
       child: SelectableText(
         data,
         style: const TextStyle(
-          color: const Color(0xff303030),
+          color: Color(0xff303030),
           fontSize: 18,
         ),
         showCursor: true,

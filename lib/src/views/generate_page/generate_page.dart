@@ -16,7 +16,7 @@ class GeneratePage extends StatefulWidget {
 }
 
 class _GeneratePageState extends State<GeneratePage> {
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
 
   String _data = 'QRapp';
 
@@ -52,9 +52,9 @@ class _GeneratePageState extends State<GeneratePage> {
                 version: QrVersions.auto,
                 size: MediaQuery.of(context).size.width * 0.72,
                 foregroundColor: const Color(0xff303030),
-                eyeStyle: QrEyeStyle(
+                eyeStyle: const QrEyeStyle(
                   eyeShape: QrEyeShape.square,
-                  color: const Color(0xff303030),
+                  color: Color(0xff303030),
                 ),
               ),
               TextFormField(
@@ -66,7 +66,7 @@ class _GeneratePageState extends State<GeneratePage> {
                 onFieldSubmitted: _showQRCode,
                 onChanged: _updateData,
                 cursorColor: const Color(0xff303030),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Data',
                   errorText: null,
                 ),

@@ -12,7 +12,7 @@ import '../../widgets/page_blueprint.dart';
 class ScannedQRCodeView extends StatefulWidget {
   final Barcode result;
 
-  ScannedQRCodeView({
+  const ScannedQRCodeView({
     Key? key,
     required this.result,
   }) : super(key: key);
@@ -28,7 +28,7 @@ class _ScannedCodePageState extends State<ScannedQRCodeView> {
       title: 'Scanned QR Code',
       showLeadingIconButton: true,
       leadingIconButton: IconButton(
-        icon: Icon(Icons.arrow_back_rounded),
+        icon: const Icon(Icons.arrow_back_rounded),
         onPressed: () => Navigator.pop(context),
         color: const Color(0xff303030),
       ),
@@ -38,7 +38,7 @@ class _ScannedCodePageState extends State<ScannedQRCodeView> {
           color: const Color(0xff303030),
           tooltip: 'Share QR Code',
           onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('This feature is under development.'),
             ),
           ),
@@ -49,11 +49,11 @@ class _ScannedCodePageState extends State<ScannedQRCodeView> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CodeType(type: 'Format:'),
+            const CodeType(type: 'Format:'),
             CodeDataString(data: widget.result.format.toString()),
-            CodeType(type: 'Data:'),
+            const CodeType(type: 'Data:'),
             CodeDataString(data: widget.result.code!),
-            CodeType(type: 'QR Code:'),
+            const CodeType(type: 'QR Code:'),
             CodeDataQRCode(data: widget.result.code),
           ],
         ),

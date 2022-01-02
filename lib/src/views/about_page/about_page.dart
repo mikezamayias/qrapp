@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatefulWidget {
-  AboutPage({Key? key}) : super(key: key);
+  const AboutPage({Key? key}) : super(key: key);
 
   @override
   _AboutPageState createState() => _AboutPageState();
@@ -11,10 +11,10 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
-    return AboutDialog(
+    return const AboutDialog(
       applicationIcon: Icon(
         Icons.qr_code_rounded,
-        color: const Color(0xFF303030),
+        color: Color(0xFF303030),
       ),
       applicationName: 'QRapp',
       applicationVersion: '1.0.0',

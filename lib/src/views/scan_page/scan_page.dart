@@ -74,7 +74,7 @@ class _ScanPageState extends State<ScanPage> {
     log('${DateTime.now().toIso8601String()}_onPermissionSet $p');
     if (!p) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('no Permission')),
+        const SnackBar(content: Text('no Permission')),
       );
     }
   }

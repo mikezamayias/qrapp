@@ -20,7 +20,7 @@ class GeneratedQRCodeView extends StatelessWidget {
       title: 'Generated QR code',
       showLeadingIconButton: true,
       leadingIconButton: IconButton(
-        icon: Icon(Icons.arrow_back_rounded),
+        icon: const Icon(Icons.arrow_back_rounded),
         onPressed: () => Navigator.pop(context),
         color: const Color(0xff303030),
       ),
@@ -30,7 +30,7 @@ class GeneratedQRCodeView extends StatelessWidget {
           color: const Color(0xff303030),
           tooltip: 'Share QR Code',
           onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('This feature is under development.'),
             ),
           ),
@@ -44,9 +44,9 @@ class GeneratedQRCodeView extends StatelessWidget {
             version: QrVersions.auto,
             size: MediaQuery.of(context).size.width * 0.72,
             foregroundColor: const Color(0xff303030),
-            eyeStyle: QrEyeStyle(
+            eyeStyle: const QrEyeStyle(
               eyeShape: QrEyeShape.square,
-              color: const Color(0xff303030),
+              color: Color(0xff303030),
             ),
           ),
         ),

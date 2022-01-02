@@ -32,18 +32,18 @@ class AboutBottomSheetListTile extends StatelessWidget {
           ? Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
-                color: const Color(0xff303030),
+                color: Color(0xff303030),
               ),
             )
           : Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.normal,
                 fontSize: 18,
-                color: const Color(0xff303030),
+                color: Color(0xff303030),
               ),
             ),
       onTap: page != null
