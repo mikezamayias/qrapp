@@ -6,7 +6,7 @@ import 'about_section.dart';
 class ExpansionPanelSection {
   Widget title;
   Widget body;
-  bool? isExpanded;
+  bool? isExpanded = false;
 
   ExpansionPanelSection({
     required this.title,
