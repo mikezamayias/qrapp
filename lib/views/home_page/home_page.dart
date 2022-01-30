@@ -1,10 +1,10 @@
 // flutter packages
 import 'package:flutter/material.dart';
 
+import '../about_page/about_page.dart';
 // custom widgets
 import '../generate_page/generate_page.dart';
 import '../history_page/history_page.dart';
-import '../about_page/about_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +14,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<StatefulWidget> _pages = [const HistoryPage(), const GeneratePage(), const AboutPage()];
+  final List<StatefulWidget> _pages = [
+    const HistoryPage(),
+    const GeneratePage(),
+    const AboutPage(),
+  ];
   int _selectedNavIndex = 0;
   final _pageController = PageController(initialPage: 0);
 
