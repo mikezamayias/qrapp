@@ -1,7 +1,8 @@
 // flutter packages
 import 'package:flutter/material.dart';
-import 'package:qrapp/src/models/expansion_panel_section.dart';
-import 'package:qrapp/src/widgets/page_blueprint.dart';
+
+import '../../models/expansion_panel_section.dart';
+import '../../widgets/page_blueprint.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
