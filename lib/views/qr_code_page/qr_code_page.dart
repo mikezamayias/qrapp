@@ -8,14 +8,14 @@ import 'package:qr_flutter/qr_flutter.dart';
 import '../../widgets/page_blueprint.dart';
 import '../action_views/generated_qrcode_view.dart';
 
-class GeneratePage extends StatefulWidget {
-  const GeneratePage({Key? key}) : super(key: key);
+class QrCodePage extends StatefulWidget {
+  const QrCodePage({Key? key}) : super(key: key);
 
   @override
-  State<GeneratePage> createState() => _GeneratePageState();
+  State<QrCodePage> createState() => _QrCodePageState();
 }
 
-class _GeneratePageState extends State<GeneratePage> {
+class _QrCodePageState extends State<QrCodePage> {
   final TextEditingController _textEditingController = TextEditingController();
 
   String _data = 'QRapp';
@@ -38,7 +38,7 @@ class _GeneratePageState extends State<GeneratePage> {
   @override
   Widget build(BuildContext context) {
     return PageBlueprint(
-      title: 'Generate',
+      title: 'QR Code',
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(15),
