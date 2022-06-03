@@ -25,7 +25,13 @@ class PageBlueprint extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: showLeadingIconButton,
           leading: leadingIconButton,
-          title: Text(title),
+          title: Text(
+            title,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: const Color(0xFF8F6146),
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
           actions: trailingActions,
         ),
         body: body,
