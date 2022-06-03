@@ -5,6 +5,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 // custom widgets
+import '../../widgets/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../widgets/page_blueprint.dart';
 import '../action_views/generated_qrcode_view.dart';
 
@@ -57,20 +58,21 @@ class _QrCodePageState extends State<QrCodePage> {
                   color: Color(0xff303030),
                 ),
               ),
-              TextFormField(
-                controller: _textEditingController,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
-                onFieldSubmitted: _showQRCode,
-                onChanged: _updateData,
-                cursorColor: const Color(0xff303030),
-                decoration: const InputDecoration(
-                  labelText: 'Data',
-                  errorText: null,
-                ),
-              ),
+              CustomNavigationBar(),
+              // TextFormField(
+              //   controller: _textEditingController,
+              //   style: const TextStyle(
+              //     fontSize: 18,
+              //     fontWeight: FontWeight.w500,
+              //   ),
+              //   onFieldSubmitted: _showQRCode,
+              //   onChanged: _updateData,
+              //   cursorColor: const Color(0xff303030),
+              //   decoration: const InputDecoration(
+              //     labelText: 'Data',
+              //     errorText: null,
+              //   ),
+              // ),
             ],
           ),
         ),
