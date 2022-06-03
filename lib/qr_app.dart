@@ -1,10 +1,10 @@
 // flutter packages
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:qrapp/views/home_page/home_page.dart';
 
-// custom widgets
 import 'themes/themes.dart';
-import 'views/home_page/home_page.dart';
+// import 'views/home_page/home_page.dart';
 
 class QrApp extends StatefulWidget {
   const QrApp({Key? key}) : super(key: key);
@@ -36,6 +36,7 @@ class _QrAppState extends State<QrApp> {
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
+        // child: HomePage(),
         child: HomePage(),
       ),
     );

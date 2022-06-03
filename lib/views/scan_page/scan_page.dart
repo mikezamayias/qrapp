@@ -53,20 +53,22 @@ class _ScanPageState extends State<ScanPage> {
   void _onQRViewCreated(QRViewController controller) {
     setState(() => this.controller = controller);
     controller.scannedDataStream.listen((scanData) async {
-      setState(() => result = scanData);
-      HapticFeedback.lightImpact();
-      await controller.pauseCamera();
-      Navigator.push(
-        context,
-        PageTransition(
+      setState(() {
+        HapticFeedback.heavyImpact();
+        controller.pauseCamera();
+        Navigator.push(
+          context,
+          PageTransition(
             type: PageTransitionType.fade,
             curve: Curves.easeInToLinear,
             duration: const Duration(milliseconds: 210),
             reverseDuration: const Duration(milliseconds: 210),
             child: ScannedQRCodeView(
-              result: result,
-            )),
-      );
+              result: scanData,
+            ),
+          ),
+        );
+      });
       await controller.resumeCamera();
     });
   }

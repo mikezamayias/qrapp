@@ -1,22 +1,22 @@
 // flutter packages
 import 'package:flutter/material.dart';
 
-import '../about_page/about_page.dart';
 // custom widgets
-import '../generate_page/generate_page.dart';
+import '../about_page/about_page.dart';
 import '../history_page/history_page.dart';
+import '../qr_code_page/qr_code_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   final List<StatefulWidget> _pages = [
     const HistoryPage(),
-    const GeneratePage(),
+    const QrCodePage(),
     const AboutPage(),
   ];
   int _selectedNavIndex = 0;
@@ -50,8 +50,8 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: PageView(
           controller: _pageController,
-          children: _pages,
           onPageChanged: _onPageChanged,
+          children: _pages,
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -64,9 +64,9 @@ class _HomePageState extends State<HomePage> {
             label: 'History',
           ),
           BottomNavigationBarItem(
-            tooltip: 'Scan QR code',
+            tooltip: 'Scan or Generate QR code',
             icon: Icon(Icons.qr_code_scanner_rounded),
-            label: 'Scan',
+            label: 'QR Code',
           ),
           BottomNavigationBarItem(
             tooltip: 'About',
