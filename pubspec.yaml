@@ -9,16 +9,19 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.4
   flutter:
     sdk: flutter
-  flutter_lints: ^1.0.4
-  font_awesome_flutter_named: ^1.0.1
-  google_fonts: ^2.1.0
-  page_transition: ^2.0.2
-  qr_code_scanner: ^0.6.1
+  flutter_lints: ^2.0.1
+  font_awesome_flutter_named: ^1.1.0
+  fvm: ^2.3.1
+  google_fonts: ^3.0.1
+  home_widget: ^0.1.6
+  page_transition: ^2.0.5
+  qr_code_scanner: ^1.0.0
   qr_flutter: ^4.0.0
-  url_launcher: ^6.0.17
+  url_launcher: ^6.1.2
+  workmanager: ^0.5.0
 
 dev_dependencies:
   flutter_test:
